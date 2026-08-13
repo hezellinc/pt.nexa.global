@@ -1,0 +1,86 @@
+import { Target, Users, Zap } from 'lucide-react';
+import InteractiveIcon from './InteractiveIcon';
+import ScrollReveal from './ScrollReveal';
+
+export default function About() {
+  return (
+    <section id="tentang" className="lazy-section py-8 md:py-10 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
+          
+          {/* Image/Visual side */}
+          <ScrollReveal direction="right" className="w-full lg:w-1/2 max-w-md lg:max-w-none mx-auto">
+            <div className="clay aspect-square p-4 md:p-8 flex items-center justify-center relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 rounded-[2rem] pointer-events-none" />
+              <div className="grid grid-cols-2 gap-4 md:gap-6 w-full h-full p-2 md:p-4">
+                <div className="clay-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl">
+                  <InteractiveIcon icon={Zap} colorClass="clay-icon-box-alt2" size={36} />
+                </div>
+                <div className="clay-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl translate-y-4 md:translate-y-8">
+                  <InteractiveIcon icon={Users} colorClass="clay-icon-box" size={36} />
+                </div>
+                <div className="clay-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl -translate-y-4 md:-translate-y-8">
+                  <InteractiveIcon icon={Target} colorClass="clay-icon-box-alt1" size={36} />
+                </div>
+                <div className="clay-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl">
+                  <div className="text-2xl md:text-4xl font-black text-primary text-center">
+                    <span className="block text-lg md:text-2xl text-text">Sejak</span>
+                    2020
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Text side */}
+          <ScrollReveal direction="left" delay={0.15} className="w-full lg:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-text">Mitra Transformasi IT & Digital Terpercaya</h2>
+            <p className="opacity-80 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
+              PT. NexaTech Solutions adalah pionir penyedia solusi digital B2B terintegrasi. Kami merancang infrastruktur digital yang tangguh, inovatif, dan efisien untuk memastikan margin keuntungan perusahaan Anda berakselerasi.
+            </p>
+            
+            <div className="space-y-6">
+              <div className="clay-sm p-6 rounded-2xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <div className="absolute top-0 left-0 w-2 h-full bg-primary/80"></div>
+                <h3 className="text-xl font-bold mb-3 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <Target size={20} className="text-primary" />
+                  </div>
+                  Visi Perusahaan
+                </h3>
+                <p className="opacity-80 text-sm md:text-base leading-relaxed">
+                  Menjadi mitra transformasi digital terdepan yang memberdayakan ekosistem bisnis global melalui inovasi teknologi cerdas, adaptif, dan berkelanjutan.
+                </p>
+              </div>
+
+              <div className="clay-sm p-6 rounded-2xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <div className="absolute top-0 left-0 w-2 h-full bg-purple-500/80"></div>
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-purple-500/10">
+                    <Zap size={20} className="text-purple-500" />
+                  </div>
+                  Misi Utama
+                </h3>
+                <ul className="space-y-3 opacity-80 text-sm md:text-base leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">01.</span>
+                    <span>Menghadirkan solusi pengembangan Web, Aplikasi & Desain UI/UX dengan standar kualitas enterprise.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">02.</span>
+                    <span>Mengoptimalkan konversi bisnis klien melalui Digital Marketing dan identitas visual yang kuat.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">03.</span>
+                    <span>Membangun kolaborasi jangka panjang berdasarkan profesionalisme, integritas, dan jaminan kinerja.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ScrollReveal>
+
+        </div>
+      </div>
+    </section>
+  );
+}
