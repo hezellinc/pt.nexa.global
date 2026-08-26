@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
@@ -52,6 +52,24 @@ const categories = ['Semua', 'NEXAWEB', 'NEXAAPP', 'NEXADESIGN', 'NEXABRAND', 'N
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('Semua');
+  const [isLoading, setIsLoading] = useState(false);
+  const loadingTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleFilterChange = (cat: string) => {
+    if (cat === filter) return;
+    setFilter(cat);
+    setIsLoading(true);
+    if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
+    loadingTimeout.current = setTimeout(() => {
+      setIsLoading(false);
+    }, 400);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
+    };
+  }, []);
 
   const filteredPortfolio = filter === 'Semua' 
     ? portfolioData 
@@ -80,7 +98,7 @@ export default function Portfolio() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => handleFilterChange(cat)}
                 className={`px-4 md:px-5 py-2 rounded-xl md:rounded-full text-sm font-bold transition-all duration-300 ${
                   filter === cat
                     ? 'bg-primary text-white shadow-md transform scale-105'
@@ -95,53 +113,73 @@ export default function Portfolio() {
 
         {/* Grid */}
         <div className="min-h-[400px]">
-          <AnimatePresence mode="popLayout">
-            <motion.div 
-              layout
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            >
-              {filteredPortfolio.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="clay overflow-hidden flex flex-col group cursor-pointer"
-                  onClick={() => openDetail(project.id)}
-                >
-                  {/* Clean Image Display (No generic AI glowing blobs) */}
-                  <div className="h-48 md:h-56 w-full bg-black/5 dark:bg-white/5 relative overflow-hidden flex items-center justify-center p-8 border-b border-text/5">
-                    <motion.img 
-                      src={project.imgSrc}
-                      alt={project.title}
-                      className="w-full h-full object-contain drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity"
-                      whileHover={{ scale: 1.08, rotate: -2 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
-                    
-                    {/* Minimalist Badge */}
-                    <div className="absolute top-4 right-4 z-20 bg-[var(--bg-color)] px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-text/10">
-                      {project.category}
+          <AnimatePresence mode="wait">
+            {isLoading ? (
+              <motion.div 
+                key="skeleton"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+              >
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="clay overflow-hidden flex flex-col">
+                    <div className="h-48 md:h-56 w-full bg-black/10 dark:bg-white/10 animate-pulse border-b border-text/5"></div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="h-6 w-2/3 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-4"></div>
+                      <div className="h-4 w-full bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-2"></div>
+                      <div className="h-4 w-5/6 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-6 flex-grow"></div>
+                      <div className="h-4 w-32 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mt-auto pt-4 border-t border-text/10"></div>
                     </div>
                   </div>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div 
+                key={filter}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+              >
+                {filteredPortfolio.map((project) => (
+                  <div
+                    key={project.id}
+                    className="clay overflow-hidden flex flex-col group cursor-pointer transition-transform hover:-translate-y-1 duration-300"
+                    onClick={() => openDetail(project.id)}
+                  >
+                    {/* Clean Image Display */}
+                    <div className="h-48 md:h-56 w-full bg-black/5 dark:bg-white/5 relative overflow-hidden flex items-center justify-center p-8 border-b border-text/5">
+                      <img 
+                        src={project.imgSrc}
+                        alt={project.title}
+                        className="w-full h-full object-contain drop-shadow-sm opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                      />
+                      
+                      {/* Minimalist Badge */}
+                      <div className="absolute top-4 right-4 z-20 bg-[var(--bg-color)] px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-text/10">
+                        {project.category}
+                      </div>
+                    </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold mb-2 text-text group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="opacity-70 text-sm leading-relaxed mb-4 flex-grow">
-                      {project.shortDesc}
-                    </p>
-                    <button className="flex items-center gap-2 text-sm font-bold text-text group-hover:text-primary transition-colors mt-auto pt-4 border-t border-text/10">
-                      Lihat Studi Kasus <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </button>
+                    {/* Content */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold mb-2 text-text group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="opacity-70 text-sm leading-relaxed mb-4 flex-grow">
+                        {project.shortDesc}
+                      </p>
+                      <button className="flex items-center gap-2 text-sm font-bold text-text group-hover:text-primary transition-colors mt-auto pt-4 border-t border-text/10">
+                        Lihat Studi Kasus <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Globe, ShoppingBag, Layout, Code, Smartphone, Database, 
@@ -140,6 +140,24 @@ const categories: Category[] = ["NEXAWEB", "NEXAAPP", "NEXADESIGN", "NEXABRAND",
 
 export default function Catalog() {
   const [activeCategory, setActiveCategory] = useState<Category>("NEXAWEB");
+  const [isLoading, setIsLoading] = useState(false);
+  const loadingTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleCategoryChange = (cat: Category) => {
+    if (cat === activeCategory) return;
+    setActiveCategory(cat);
+    setIsLoading(true);
+    if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
+    loadingTimeout.current = setTimeout(() => {
+      setIsLoading(false);
+    }, 400);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
+    };
+  }, []);
 
   return (
     <section id="katalog" className="lazy-section py-8 md:py-12 px-4 md:px-8">
@@ -160,7 +178,7 @@ export default function Catalog() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => handleCategoryChange(cat)}
                 className={`px-4 md:px-6 py-2.5 rounded-xl md:rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
                   activeCategory === cat
                     ? 'bg-primary text-white shadow-md transform scale-105'
@@ -176,37 +194,60 @@ export default function Catalog() {
         {/* Tab Content */}
         <div className="min-h-[400px]">
           <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
-            >
-              {catalogData[activeCategory].map((product, index) => (
-                <div 
-                  key={product.title} 
-                  className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: activeCategory } }))}
-                >
-                  <div className="shrink-0 mt-1">
-                    <InteractiveIcon icon={product.icon} colorClass={product.colorClass} size={36} />
+            {isLoading ? (
+              <motion.div
+                key="skeleton"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
+              >
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6">
+                    <div className="shrink-0 mt-1 w-12 h-12 rounded-2xl bg-black/10 dark:bg-white/10 animate-pulse"></div>
+                    <div className="w-full">
+                      <div className="h-6 w-3/4 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-4"></div>
+                      <div className="h-4 w-full bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-2"></div>
+                      <div className="h-4 w-5/6 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-6"></div>
+                      <div className="h-4 w-32 bg-black/10 dark:bg-white/10 rounded-md animate-pulse"></div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-text group-hover:text-primary transition-colors">
-                      {product.title}
-                    </h3>
-                    <p className="opacity-80 text-sm md:text-base leading-relaxed mb-4">
-                      {product.desc}
-                    </p>
-                    <button className="flex items-center gap-2 text-sm font-bold text-primary group-hover:underline">
-                      Konsultasi Solusi Ini <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
+              >
+                {catalogData[activeCategory].map((product, index) => (
+                  <div 
+                    key={product.title} 
+                    className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: activeCategory } }))}
+                  >
+                    <div className="shrink-0 mt-1">
+                      <InteractiveIcon icon={product.icon} colorClass={product.colorClass} size={36} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 text-text group-hover:text-primary transition-colors">
+                        {product.title}
+                      </h3>
+                      <p className="opacity-80 text-sm md:text-base leading-relaxed mb-4">
+                        {product.desc}
+                      </p>
+                      <button className="flex items-center gap-2 text-sm font-bold text-primary group-hover:underline">
+                        Konsultasi Solusi Ini <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
         

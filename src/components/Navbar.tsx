@@ -23,6 +23,38 @@ export default function Navbar() {
     }
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Offset for fixed navbar
+      const headerOffset = 100;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Remove class if it exists to restart animation
+      targetElement.classList.remove('premium-shimmer-focus');
+      // Trigger reflow
+      void targetElement.offsetWidth;
+      // Add class for shimmer effect
+      targetElement.classList.add('premium-shimmer-focus');
+      
+      // Clean up class after animation finishes
+      setTimeout(() => {
+        targetElement.classList.remove('premium-shimmer-focus');
+      }, 1500);
+    }
+  };
+
   const navLinks = [
     { name: 'Beranda', href: '#beranda', icon: Home, colorClass: 'clay-icon-box' },
     { name: 'Tentang', href: '#tentang', icon: Info, colorClass: 'clay-icon-box-alt1' },
@@ -85,7 +117,7 @@ export default function Navbar() {
                 <motion.a 
                   key={link.name} 
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -103,7 +135,7 @@ export default function Navbar() {
             
             <motion.a 
               href="#kontak" 
-              onClick={() => setIsOpen(false)} 
+              onClick={(e) => handleNavClick(e, '#kontak')}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
