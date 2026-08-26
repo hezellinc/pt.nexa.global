@@ -96,7 +96,7 @@ export default function NexaAssistant() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -104,7 +104,7 @@ export default function NexaAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 w-80 sm:w-96 h-[500px] max-h-[80vh] clay bg-[var(--bg-color)] rounded-3xl flex flex-col overflow-hidden border border-white/10 shadow-2xl"
+            className="mb-4 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[80vh] clay bg-[var(--bg-color)] rounded-3xl flex flex-col overflow-hidden border border-text/10 shadow-2xl"
           >
             {/* Header */}
             <div className="p-4 border-b border-white/10 flex justify-between items-center bg-black/20">

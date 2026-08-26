@@ -78,7 +78,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-20 left-4 right-4 md:left-auto md:right-4 md:w-96 clay p-6 flex flex-col gap-2 bg-[color-mix(in_srgb,var(--bg-color)_95%,transparent)] backdrop-blur-xl origin-top-right pointer-events-auto transition-colors duration-300"
+            className="absolute top-20 left-4 right-4 md:left-auto md:right-4 md:w-96 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-hide clay p-6 flex flex-col gap-2 bg-[color-mix(in_srgb,var(--bg-color)_95%,transparent)] backdrop-blur-xl origin-top-right pointer-events-auto transition-colors duration-300"
           >
             <div className="grid grid-cols-1 gap-2">
               {navLinks.map((link, index) => (
