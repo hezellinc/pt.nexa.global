@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageSquare, X, Send, Bot, User, Loader2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import puter from '@heyputer/puter.js';
 
 const SYSTEM_PROMPT = `Anda adalah Nexa Assistant, konsultan AI resmi untuk PT. NexaTech Solutions.
 Tugas Anda adalah membantu klien (fokus pada korporasi dan B2B PT Teknologi Digital) memahami layanan IT, IoT, AI Software, dan transformasi digital kami.
@@ -66,22 +65,31 @@ export default function NexaAssistant() {
     setIsLoading(true);
 
     try {
-      // Menyiapkan pesan ke format puter
-      const chatMessages = [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...messages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
-        { role: 'user', content: userMessage }
-      ];
+      // Mengirim request ke endpoint backend lokal
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          messages: [
+            ...messages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
+            { role: 'user', content: userMessage }
+          ]
+        })
+      });
 
-      // Memanggil puter.js
-      const response = await puter.ai.chat(chatMessages, { model: 'deepseek-v3.2' });
+      if (!response.ok) {
+        throw new Error(`Server merespons dengan status ${response.status}`);
+      }
+
+      const data = await response.json();
+      const assistantMessage = data?.choices?.[0]?.message?.content || "Maaf, respon tidak bisa dibuat.";
       
-      const assistantContent = response?.message?.content;
-      const assistantMessage: string = typeof assistantContent === 'string' ? assistantContent : (typeof response === 'string' ? response : "Maaf, format respon tidak dikenali.");
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
     } catch (error) {
-      console.error("Puter AI Error:", error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Maaf, terjadi kesalahan koneksi dengan server AI." }]);
+      console.error("Chat API Error:", error);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Maaf, terjadi kesalahan koneksi dengan server." }]);
     } finally {
       setIsLoading(false);
     }

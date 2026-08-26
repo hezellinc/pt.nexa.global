@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
+import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_PROMPT = `Anda adalah Nexa Assistant, konsultan AI resmi untuk PT. NexaTech Solutions.
 Tugas Anda adalah membantu klien (fokus pada korporasi dan B2B PT Teknologi Digital) memahami layanan IT, IoT, AI Software, dan transformasi digital kami.
@@ -28,6 +29,8 @@ PANDUAN MENJAWAB:
 2. Arahkan korporasi/klien pada layanan yang paling tepat dari NexaTech sesuai kebutuhan efisiensi mereka.
 3. Selalu gunakan format **Markdown** agar tulisan rapi. Jika klien bertanya tentang tim, lokasi, atau layanan, berikan jawaban berdasarkan data di atas.`;
 
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
 async function startServer() {
   const app = express();
   const PORT = 3000;
@@ -38,55 +41,41 @@ async function startServer() {
   app.post("/api/chat", async (req, res) => {
     try {
       const { messages } = req.body;
-      const apiKey = process.env.MAXROUTER_API_KEY;
       
-      // Fallback URL jika environment variable tidak diset
-      const baseUrl = process.env.MAXROUTER_BASE_URL || "https://api.maxrouter.com/v1/chat/completions";
-
-      if (!apiKey) {
-        return res.status(500).json({ error: "MAXROUTER_API_KEY is missing" });
+      if (!process.env.GEMINI_API_KEY) {
+         return res.status(500).json({ error: "API Key belum di-setup di server" });
       }
 
-      const maxRouterMessages = [
-        { role: "system", content: SYSTEM_PROMPT },
-        ...messages
-      ];
+      // Convert messages to Gemini format
+      const history = messages.filter((m: any) => m.role !== 'system').map((m: any) => ({
+         role: m.role === 'user' ? 'user' : 'model',
+         parts: [{ text: m.content }]
+      }));
+      
+      const lastMessage = history.pop(); // Ambil pesan user terakhir
+      
+      if (!lastMessage || lastMessage.role !== 'user') {
+          return res.status(400).json({ error: "Pesan tidak valid" });
+      }
 
-      const response = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model: "deepseek-v3.2", // Menggunakan model DeepSeek via MaxRouter
-          messages: maxRouterMessages,
-        })
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: [
+          { role: 'user', parts: [{ text: lastMessage.parts[0].text }] }
+        ],
+        config: {
+           systemInstruction: SYSTEM_PROMPT
+        }
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("MaxRouter API Error:", errorText);
-        return res.status(response.status).json({ error: `MaxRouter API Error: ${response.statusText}` });
-      }
-
-      const responseText = await response.text();
-      let data;
-      try {
-        data = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error("Invalid JSON from MaxRouter:", responseText);
-        return res.status(500).json({ error: "MaxRouter URL salah. Pastikan MAXROUTER_BASE_URL berakhiran dengan /v1/chat/completions" });
-      }
-
-      // Format response back to what the frontend expects
       res.json({
         choices: [{
           message: {
-            content: data.choices?.[0]?.message?.content || "Respon dari server kosong."
+            content: response.text || "Maaf, respon tidak bisa dibuat."
           }
         }]
       });
+
     } catch (error) {
       console.error("Chat Server Error:", error);
       res.status(500).json({ error: "Internal server error" });
