@@ -28,6 +28,7 @@ export default function Navbar() {
     { name: 'Tentang', href: '#tentang', icon: Info, colorClass: 'clay-icon-box-alt1' },
     { name: 'Layanan', href: '#layanan', icon: Layers, colorClass: 'clay-icon-box-alt2' },
     { name: 'Katalog', href: '#katalog', icon: Tag, colorClass: 'clay-icon-box-alt4' },
+    { name: 'Portofolio', href: '#portofolio', icon: Home, colorClass: 'clay-icon-box' },
     { name: 'Cara Kerja', href: '#proses', icon: Settings, colorClass: 'clay-icon-box-alt3' },
     { name: 'Testimoni', href: '#testimoni', icon: MessageSquare, colorClass: 'clay-icon-box-alt2' },
     { name: 'Harga', href: '#harga', icon: Tag, colorClass: 'clay-icon-box-alt4' },

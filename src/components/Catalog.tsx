@@ -187,7 +187,8 @@ export default function Catalog() {
               {catalogData[activeCategory].map((product, index) => (
                 <div 
                   key={product.title} 
-                  className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300"
+                  className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: activeCategory } }))}
                 >
                   <div className="shrink-0 mt-1">
                     <InteractiveIcon icon={product.icon} colorClass={product.colorClass} size={36} />

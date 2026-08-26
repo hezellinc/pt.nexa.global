@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {StrictMode} from 'react';
+import { StrictMode } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Catalog from './components/Catalog';
+import Portfolio from './components/Portfolio';
 import Process from './components/Process';
 import About from './components/About';
 import Impact from './components/Impact';
@@ -19,6 +20,8 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NexaAssistant from './components/NexaAssistant';
+import ServiceDetailModal from './components/ServiceDetailModal';
+import PortfolioDetailModal from './components/PortfolioDetailModal';
 
 export default function App() {
   return (
@@ -30,6 +33,7 @@ export default function App() {
         <Impact />
         <Services />
         <Catalog />
+        <Portfolio />
         <Process />
         <Testimonials />
         <Pricing />
@@ -40,6 +44,10 @@ export default function App() {
       </main>
       <Footer />
       <NexaAssistant />
+      
+      {/* Overlays / Modals */}
+      <ServiceDetailModal />
+      <PortfolioDetailModal />
     </div>
   );
 }

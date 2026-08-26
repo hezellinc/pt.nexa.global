@@ -81,9 +81,10 @@ export default function Services() {
               className="h-full"
             >
               <motion.div 
+                onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: service.title } }))}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="clay p-6 md:p-8 flex flex-col h-full relative overflow-hidden group"
+                className="clay p-6 md:p-8 flex flex-col h-full relative overflow-hidden group cursor-pointer"
               >
                 <div className="mb-6 flex justify-between items-start">
                   <motion.img 
