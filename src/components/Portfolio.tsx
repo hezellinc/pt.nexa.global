@@ -1,63 +1,50 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Globe, Smartphone, PenTool, Layout, Megaphone, ArrowRight, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import InteractiveIcon from './InteractiveIcon';
 
 const portfolioData = [
   {
     id: 'p1',
     title: 'EcoShop E-Commerce',
     category: 'NEXAWEB',
-    icon: Globe,
-    colorClass: 'clay-icon-box',
+    imgSrc: '/nexaweb.png',
     shortDesc: 'Platform e-commerce ramah lingkungan dengan sistem inventaris dan payment gateway terintegrasi.',
-    image: 'bg-emerald-500/10'
   },
   {
     id: 'p2',
     title: 'FinTrack Dashboard',
     category: 'NEXADESIGN',
-    icon: Layout,
-    colorClass: 'clay-icon-box-alt1',
+    imgSrc: '/nexadesign.png',
     shortDesc: 'Desain ulang UI/UX dashboard analitik keuangan untuk B2B SaaS, meningkatkan retensi pengguna.',
-    image: 'bg-blue-500/10'
   },
   {
     id: 'p3',
     title: 'Smart HR Absensi',
     category: 'NEXAAPP',
-    icon: Smartphone,
-    colorClass: 'clay-icon-box-alt2',
+    imgSrc: '/nexaapp.png',
     shortDesc: 'Aplikasi mobile absensi karyawan berbasis geolokasi dan pengenalan wajah (Face ID).',
-    image: 'bg-purple-500/10'
   },
   {
     id: 'p4',
     title: 'Bite & Brew Rebranding',
     category: 'NEXABRAND',
-    icon: PenTool,
-    colorClass: 'clay-icon-box-alt4',
+    imgSrc: '/nexabrand.png',
     shortDesc: 'Pembuatan identitas visual lengkap, logo, dan brand guidelines untuk waralaba kafe nasional.',
-    image: 'bg-amber-500/10'
   },
   {
     id: 'p5',
     title: 'TechGrow SEO Campaign',
     category: 'NEXADIGITAL',
-    icon: Megaphone,
-    colorClass: 'clay-icon-box-alt3',
+    imgSrc: '/nexadigital.png',
     shortDesc: 'Kampanye SEO dan manajemen Ads yang meningkatkan traffic organik klien sebesar 300% dalam 4 bulan.',
-    image: 'bg-rose-500/10'
   },
   {
     id: 'p6',
     title: 'MedikaCare Portal',
     category: 'NEXAWEB',
-    icon: Globe,
-    colorClass: 'clay-icon-box-alt1',
+    imgSrc: '/nexaprofile.png',
     shortDesc: 'Portal pendaftaran pasien rumah sakit dengan integrasi rekam medis elektronik yang aman.',
-    image: 'bg-cyan-500/10'
   }
 ];
 
@@ -124,18 +111,18 @@ export default function Portfolio() {
                   className="clay overflow-hidden flex flex-col group cursor-pointer"
                   onClick={() => openDetail(project.id)}
                 >
-                  {/* Image Placeholder */}
-                  <div className={`h-48 w-full ${project.image} relative overflow-hidden flex items-center justify-center`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
-                    <motion.div 
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="relative z-20 opacity-80 group-hover:opacity-100 transition-opacity"
-                    >
-                      <InteractiveIcon icon={project.icon} colorClass={project.colorClass} size={64} />
-                    </motion.div>
+                  {/* Clean Image Display (No generic AI glowing blobs) */}
+                  <div className="h-48 md:h-56 w-full bg-black/5 dark:bg-white/5 relative overflow-hidden flex items-center justify-center p-8 border-b border-text/5">
+                    <motion.img 
+                      src={project.imgSrc}
+                      alt={project.title}
+                      className="w-full h-full object-contain drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity"
+                      whileHover={{ scale: 1.08, rotate: -2 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
                     
-                    {/* Badge */}
-                    <div className="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/20">
+                    {/* Minimalist Badge */}
+                    <div className="absolute top-4 right-4 z-20 bg-[var(--bg-color)] px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-text/10">
                       {project.category}
                     </div>
                   </div>
