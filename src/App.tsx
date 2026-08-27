@@ -35,10 +35,10 @@ export default function App() {
           scale={1}
           opacity={1}
           mouseInteractive={true}
-          renderScale={0.55}
-          maxDpr={1.5}
-          targetFps={60}
-          iterations={60}
+          renderScale={0.2}
+          maxDpr={1.0}
+          targetFps={30}
+          iterations={40}
         />
       </div>
       <Navbar />
