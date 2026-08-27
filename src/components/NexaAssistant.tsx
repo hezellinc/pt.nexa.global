@@ -25,8 +25,11 @@ LAYANAN KAMI:
 TIM KAMI (Pakar Kreatif & Teknis):
 - **Muhammad Zyldan Muzhaffar**: CEO
 - **Muhammad Fariz Alfauzi**: Marketing & Dev
-- **Wolid Herdiansyah**: Designer UI/UX
-- **Reihan Alvin**: Keuangan
+- **Zulpa Apriliani**: Keuangan
+- **Annas Nasri**: Keuangan
+- **Dimas Alvino**: Marketing
+- **Reihan Alvin**: Desainer
+- **Wolid Herdiansyah**: Desainer
 
 PANDUAN MENJAWAB:
 1. Selalu bersikap profesional, ramah, dan sangat berpengetahuan dalam bidang marketing B2B, teknologi, serta finansial.
@@ -104,12 +107,12 @@ export default function NexaAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[80vh] clay bg-[var(--bg-color)] rounded-3xl flex flex-col overflow-hidden border border-text/10 shadow-2xl"
+            className="mb-4 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[80vh] glass bg-[var(--bg-color)] rounded-3xl flex flex-col overflow-hidden border border-text/10 shadow-2xl"
           >
             {/* Header */}
             <div className="p-4 border-b border-white/10 flex justify-between items-center bg-black/20">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full clay-icon-box flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full glass-icon-box flex items-center justify-center">
                   <Bot size={20} className="text-primary" />
                 </div>
                 <div>
@@ -136,8 +139,8 @@ export default function NexaAssistant() {
                 >
                   <div className={`max-w-[85%] p-4 rounded-3xl ${
                     msg.role === 'user' 
-                      ? 'clay-btn text-white rounded-br-sm' 
-                      : 'clay-sm bg-[var(--clay-bg)] text-text rounded-bl-sm'
+                      ? 'glass-btn text-white rounded-br-sm' 
+                      : 'glass-sm bg-[var(--glass-bg)] text-text rounded-bl-sm'
                   }`}>
                     {msg.role === 'assistant' && (
                       <div className="flex items-center gap-2 mb-2 opacity-80 border-b border-black/10 dark:border-white/10 pb-2">
@@ -156,7 +159,7 @@ export default function NexaAssistant() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="clay-sm bg-[var(--clay-bg)] text-text rounded-3xl rounded-bl-sm p-4 flex items-center gap-3">
+                  <div className="glass-sm bg-[var(--glass-bg)] text-text rounded-3xl rounded-bl-sm p-4 flex items-center gap-3">
                     <Loader2 size={16} className="animate-spin text-primary" />
                     <span className="text-sm font-semibold opacity-80">Mengetik balasan...</span>
                   </div>
@@ -173,13 +176,13 @@ export default function NexaAssistant() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Tanyakan sesuatu..."
-                  className="flex-1 clay-input text-sm rounded-full px-4"
+                  className="flex-1 glass-input text-sm rounded-full px-4"
                   disabled={isLoading}
                 />
                 <button 
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="w-12 h-12 rounded-full clay-btn flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-12 h-12 rounded-full glass-btn flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={18} className="ml-1" />
                 </button>
@@ -191,7 +194,7 @@ export default function NexaAssistant() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full clay-btn flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl"
+        className="w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (

@@ -39,7 +39,7 @@ const impactStats = [
     value: 150,
     suffix: '+',
     icon: Briefcase,
-    colorClass: 'clay-icon-box-alt2'
+    colorClass: 'glass-icon-box-alt2'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const impactStats = [
     value: 45,
     suffix: '+',
     icon: Users,
-    colorClass: 'clay-icon-box-alt1'
+    colorClass: 'glass-icon-box-alt1'
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const impactStats = [
     value: 99,
     suffix: '%',
     icon: Smile,
-    colorClass: 'clay-icon-box'
+    colorClass: 'glass-icon-box'
   }
 ];
 
@@ -63,7 +63,7 @@ export default function Impact() {
   return (
     <section id="dampak" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="clay p-8 md:p-12 relative overflow-hidden">
+        <div className="glass p-8 md:p-12 relative overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-[#00cec9]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -73,7 +73,7 @@ export default function Impact() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase"
+              className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase"
             >
               Dampak Kami
             </motion.div>
@@ -91,7 +91,7 @@ export default function Impact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="clay-sm p-6 md:p-8 flex flex-col items-center justify-center text-center bg-[color-mix(in_srgb,var(--bg-color)_30%,transparent)] backdrop-blur-sm"
+                className="glass-sm p-6 md:p-8 flex flex-col items-center justify-center text-center bg-[color-mix(in_srgb,var(--bg-color)_30%,transparent)] backdrop-blur-sm"
               >
                 <div className="mb-4">
                   <InteractiveIcon icon={stat.icon} colorClass={stat.colorClass} size={36} />

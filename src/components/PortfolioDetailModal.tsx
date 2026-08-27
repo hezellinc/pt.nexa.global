@@ -98,18 +98,18 @@ export default function PortfolioDetailModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="w-full max-w-4xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto clay relative border border-white/20"
+            className="w-full max-w-4xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto glass relative border border-white/20"
           >
             {/* Close Button */}
             <button 
               onClick={close}
-              className="absolute top-4 right-4 md:top-6 md:right-6 z-30 p-3 clay-sm rounded-full text-text hover:text-primary transition-colors bg-[var(--bg-color)] shadow-sm"
+              className="absolute top-4 right-4 md:top-6 md:right-6 z-30 p-3 glass-sm rounded-full text-text hover:text-primary transition-colors bg-[var(--bg-color)] shadow-sm"
             >
               <X size={24} />
             </button>
 
             {/* Clean Image Banner */}
-            <div className="w-full h-48 md:h-64 bg-black/5 dark:bg-white/5 relative flex items-center justify-center overflow-hidden border-b border-text/5 p-8">
+            <div className="w-full h-48 md:h-64 bg-white/5 relative flex items-center justify-center overflow-hidden border-b border-text/5 p-8">
                <motion.img 
                  src={data.imgSrc}
                  alt={data.title}
@@ -123,7 +123,7 @@ export default function PortfolioDetailModal() {
             <div className="p-6 md:p-10 relative z-20">
               
               <div className="mb-10 text-center">
-                <span className="inline-block px-4 py-1 rounded-full clay-sm text-primary font-bold text-xs tracking-widest uppercase mb-4">
+                <span className="inline-block px-4 py-1 rounded-full glass-sm text-primary font-bold text-xs tracking-widest uppercase mb-4">
                   {data.category}
                 </span>
                 <h2 className="text-3xl md:text-5xl font-black mb-4 text-text">{data.title}</h2>
@@ -132,7 +132,7 @@ export default function PortfolioDetailModal() {
 
               <div className="space-y-8">
                 {/* Challenge */}
-                <div className="clay p-6 md:p-8">
+                <div className="glass p-6 md:p-8">
                   <h3 className="text-xl font-bold text-rose-500 mb-3 border-b border-rose-500/20 pb-2">Tantangan Klien</h3>
                   <p className="opacity-90 leading-relaxed text-base md:text-lg">
                     {data.challenge}
@@ -140,7 +140,7 @@ export default function PortfolioDetailModal() {
                 </div>
 
                 {/* Solution */}
-                <div className="clay p-6 md:p-8">
+                <div className="glass p-6 md:p-8">
                   <h3 className="text-xl font-bold text-blue-500 mb-3 border-b border-blue-500/20 pb-2">Solusi NexaTech</h3>
                   <p className="opacity-90 leading-relaxed text-base md:text-lg">
                     {data.solution}
@@ -148,7 +148,7 @@ export default function PortfolioDetailModal() {
                 </div>
 
                 {/* Result */}
-                <div className="clay p-6 md:p-8 bg-emerald-500/5 border border-emerald-500/20">
+                <div className="glass p-6 md:p-8 bg-emerald-500/5 border border-emerald-500/20">
                   <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-3 border-b border-emerald-500/20 pb-2">Hasil Akhir</h3>
                   <p className="opacity-90 leading-relaxed text-base md:text-lg font-medium">
                     {data.result}

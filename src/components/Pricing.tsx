@@ -13,8 +13,8 @@ const plans = [
       'Distribusi via Tautan Web',
       'Dukungan Teknis 1 Bulan'
     ],
-    colorClass: 'clay-icon-box-alt2',
-    buttonClass: 'clay-btn-accent',
+    colorClass: 'glass-icon-box-alt2',
+    buttonClass: 'glass-btn-accent',
     popular: false
   },
   {
@@ -28,8 +28,8 @@ const plans = [
       'Distribusi Web & Aplikasi PWA', 
       'Dukungan Teknis 6 Bulan'
     ],
-    colorClass: 'clay-icon-box',
-    buttonClass: 'clay-btn',
+    colorClass: 'glass-icon-box',
+    buttonClass: 'glass-btn',
     popular: true
   },
   {
@@ -43,8 +43,8 @@ const plans = [
       'Distribusi ke App Store & Play Store', 
       'Dukungan Teknis 1 Tahun'
     ],
-    colorClass: 'clay-icon-box-alt1',
-    buttonClass: 'clay-btn-accent',
+    colorClass: 'glass-icon-box-alt1',
+    buttonClass: 'glass-btn-accent',
     popular: false
   }
 ];
@@ -54,7 +54,7 @@ export default function Pricing() {
     <section id="harga" className="lazy-section py-8 md:py-10 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_30%,transparent)]">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-8 md:mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
+          <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
             Penjualan & Paket
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Pilihan Paket Layanan</h2>
@@ -71,7 +71,7 @@ export default function Pricing() {
               delay={index * 0.1}
               className="flex flex-col h-full"
             >
-              <div className={`clay relative flex flex-col p-6 md:p-8 h-full ${plan.popular ? 'border-2 border-primary transform md:-translate-y-4' : ''}`}>
+              <div className={`glass relative flex flex-col p-6 md:p-8 h-full ${plan.popular ? 'border-2 border-primary transform md:-translate-y-4' : ''}`}>
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-md">
                     <Star size={16} className="fill-current" /> Paling Laris

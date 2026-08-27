@@ -10,7 +10,7 @@ export default function Services() {
       subtitle: 'WEBSITE CREATION',
       desc: 'Pembuatan website company profile, e-commerce, hingga landing page interaktif dengan performa tinggi dan SEO friendly.', 
       img: "/nexaweb.png",
-      colorClass: 'clay-icon-box-alt2'
+      colorClass: 'glass-icon-box-alt2'
     },
     { 
       id: 2,
@@ -18,7 +18,7 @@ export default function Services() {
       subtitle: 'SIMPLE APPLICATION',
       desc: 'Pengembangan aplikasi web dan mobile ringan untuk mempermudah operasional dan manajemen bisnis Anda.', 
       img: "/nexaapp.png",
-      colorClass: 'clay-icon-box-alt3'
+      colorClass: 'glass-icon-box-alt3'
     },
     { 
       id: 3,
@@ -26,7 +26,7 @@ export default function Services() {
       subtitle: 'UI / UX DESIGN',
       desc: 'Riset, wireframing, dan desain antarmuka yang estetis serta berpusat pada kenyamanan pengguna (User-Centric).', 
       img: "/nexadesign.png",
-      colorClass: 'clay-icon-box-alt1'
+      colorClass: 'glass-icon-box-alt1'
     },
     { 
       id: 4,
@@ -34,7 +34,7 @@ export default function Services() {
       subtitle: 'LOGO & VISUAL IDENTITY',
       desc: 'Branding identity, logo, ilustrasi, dan materi pemasaran visual untuk memperkuat identitas brand perusahaan Anda.', 
       img: "/nexabrand.png",
-      colorClass: 'clay-icon-box-alt4'
+      colorClass: 'glass-icon-box-alt4'
     },
     { 
       id: 5,
@@ -42,7 +42,7 @@ export default function Services() {
       subtitle: 'POSTER / PAMPHLET',
       desc: 'Layanan desain grafis untuk poster, pamflet, dan media promosi cetak maupun digital yang menarik.', 
       img: "/nexamedia.png",
-      colorClass: 'clay-icon-box-alt2'
+      colorClass: 'glass-icon-box-alt2'
     },
     { 
       id: 6,
@@ -50,7 +50,7 @@ export default function Services() {
       subtitle: 'COMPANY PROFILE',
       desc: 'Pembuatan company profile profesional yang merepresentasikan nilai dan kredibilitas bisnis Anda di mata klien.', 
       img: "/nexaprofile.png",
-      colorClass: 'clay-icon-box-alt1'
+      colorClass: 'glass-icon-box-alt1'
     },
     { 
       id: 7,
@@ -58,7 +58,7 @@ export default function Services() {
       subtitle: 'DIGITAL MARKETING',
       desc: 'Strategi pemasaran digital, SEO, dan manajemen kampanye online untuk meningkatkan konversi dan jangkauan audiens Anda.', 
       img: "/nexadigital.png",
-      colorClass: 'clay-icon-box-alt3'
+      colorClass: 'glass-icon-box-alt3'
     },
   ];
 
@@ -84,7 +84,7 @@ export default function Services() {
                 onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: service.title } }))}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="clay p-6 md:p-8 flex flex-col h-full relative overflow-hidden group cursor-pointer"
+                className="glass p-6 md:p-8 flex flex-col h-full relative overflow-hidden group cursor-pointer"
               >
                 <div className="mb-6 flex justify-between items-start">
                   <motion.img 
@@ -94,7 +94,7 @@ export default function Services() {
                     whileHover={{ scale: 1.08, rotate: [-2, 2, -2, 0] }}
                     transition={{ type: "spring", stiffness: 300 }}
                   />
-                  <div className="w-10 h-10 md:w-12 md:h-12 clay-sm flex items-center justify-center text-gray-400 group-hover:text-primary transition-colors cursor-pointer shrink-0">
+                  <div className="w-10 h-10 md:w-12 md:h-12 glass-sm flex items-center justify-center text-gray-400 group-hover:text-primary transition-colors cursor-pointer shrink-0">
                     <ArrowRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

@@ -83,7 +83,7 @@ export default function Portfolio() {
     <section id="portofolio" className="lazy-section py-12 md:py-16 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_40%,transparent)]">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-10 md:mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
+          <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
             Karya Terbaik Kami
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Portofolio Proyek</h2>
@@ -94,7 +94,7 @@ export default function Portfolio() {
 
         {/* Filter */}
         <ScrollReveal direction="up" delay={0.1} className="mb-10">
-          <div className="flex flex-wrap justify-center gap-2 p-2 bg-[color-mix(in_srgb,var(--bg-color)_80%,transparent)] backdrop-blur-md rounded-2xl md:rounded-full clay-sm max-w-fit mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 p-2 bg-[color-mix(in_srgb,var(--bg-color)_80%,transparent)] backdrop-blur-md rounded-2xl md:rounded-full glass-sm max-w-fit mx-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -124,13 +124,13 @@ export default function Portfolio() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
               >
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="clay overflow-hidden flex flex-col">
-                    <div className="h-48 md:h-56 w-full bg-black/10 dark:bg-white/10 animate-pulse border-b border-text/5"></div>
+                  <div key={i} className="glass overflow-hidden flex flex-col">
+                    <div className="h-48 md:h-56 w-full bg-white/10 animate-pulse border-b border-text/5"></div>
                     <div className="p-6 flex flex-col flex-grow">
-                      <div className="h-6 w-2/3 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-4"></div>
-                      <div className="h-4 w-full bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-2"></div>
-                      <div className="h-4 w-5/6 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-6 flex-grow"></div>
-                      <div className="h-4 w-32 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mt-auto pt-4 border-t border-text/10"></div>
+                      <div className="h-6 w-2/3 bg-white/10 rounded-md animate-pulse mb-4"></div>
+                      <div className="h-4 w-full bg-white/10 rounded-md animate-pulse mb-2"></div>
+                      <div className="h-4 w-5/6 bg-white/10 rounded-md animate-pulse mb-6 flex-grow"></div>
+                      <div className="h-4 w-32 bg-white/10 rounded-md animate-pulse mt-auto pt-4 border-t border-text/10"></div>
                     </div>
                   </div>
                 ))}
@@ -147,11 +147,11 @@ export default function Portfolio() {
                 {filteredPortfolio.map((project) => (
                   <div
                     key={project.id}
-                    className="clay overflow-hidden flex flex-col group cursor-pointer transition-transform hover:-translate-y-1 duration-300"
+                    className="glass overflow-hidden flex flex-col group cursor-pointer transition-transform hover:-translate-y-1 duration-300"
                     onClick={() => openDetail(project.id)}
                   >
                     {/* Clean Image Display */}
-                    <div className="h-48 md:h-56 w-full bg-black/5 dark:bg-white/5 relative overflow-hidden flex items-center justify-center p-8 border-b border-text/5">
+                    <div className="h-48 md:h-56 w-full bg-white/5 relative overflow-hidden flex items-center justify-center p-8 border-b border-text/5">
                       <img 
                         src={project.imgSrc}
                         alt={project.title}

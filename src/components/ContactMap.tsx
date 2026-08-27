@@ -1,6 +1,6 @@
 export default function ContactMap() {
   return (
-    <div className="w-full h-full rounded-2xl overflow-hidden z-10 relative bg-black/5 dark:bg-white/5">
+    <div className="w-full h-full rounded-2xl overflow-hidden z-10 relative bg-white/5">
       {/* Menggunakan Google Maps Iframe (100% Gratis, Tanpa API Key, Tanpa Billing) */}
       <iframe 
         title="Google Maps - NexaTech Solutions"
@@ -14,7 +14,7 @@ export default function ContactMap() {
         className="absolute inset-0 z-0 grayscale-0 dark:grayscale-[20%] dark:invert-[90%] dark:hue-rotate-180 transition-all duration-500 hover:grayscale-0 hover:invert-0 hover:hue-rotate-0"
       ></iframe>
       
-      {/* Layer Interaksi (Opsional: agar tetap empuk ala claymorphism) */}
+      {/* Layer Interaksi (Opsional: agar tetap empuk ala glassmorphism) */}
       <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10 rounded-2xl"></div>
     </div>
   );

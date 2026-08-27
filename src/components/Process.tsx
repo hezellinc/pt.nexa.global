@@ -7,25 +7,25 @@ const steps = [
     icon: Lightbulb,
     title: '1. Riset & Pengiklanan',
     description: 'Kami menganalisis pasar Anda, merancang strategi pengiklanan, dan menentukan konsep produk yang paling menjual.',
-    colorClass: 'clay-icon-box-alt4'
+    colorClass: 'glass-icon-box-alt4'
   },
   {
     icon: PenTool,
     title: '2. Desain UI/UX',
     description: 'Pembuatan wireframe dan prototipe interaktif agar Anda dapat melihat gambaran nyata sebelum dikembangkan.',
-    colorClass: 'clay-icon-box-alt1'
+    colorClass: 'glass-icon-box-alt1'
   },
   {
     icon: Code,
     title: '3. Pengembangan & Integrasi',
     description: 'Proses coding (Front-end & Back-end) serta integrasi fitur penjualan seperti Payment Gateway.',
-    colorClass: 'clay-icon-box-alt2'
+    colorClass: 'glass-icon-box-alt2'
   },
   {
     icon: Rocket,
     title: '4. Peluncuran & Distribusi',
     description: 'Mendistribusikan produk digital ke server cloud (Web) atau mempublikasikannya ke App Store/Play Store (Mobile).',
-    colorClass: 'clay-icon-box'
+    colorClass: 'glass-icon-box'
   }
 ];
 
@@ -34,7 +34,7 @@ export default function Process() {
     <section id="proses" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-10 md:mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
+          <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
             Cara Kerja Kami
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Proses End-to-End</h2>
@@ -45,7 +45,7 @@ export default function Process() {
 
         <div className="relative">
           {/* Connector Line (Desktop Only) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-black/5 dark:bg-white/5 -translate-y-1/2 z-0 rounded-full">
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/5 -translate-y-1/2 z-0 rounded-full">
             <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary w-full rounded-full opacity-30"></div>
           </div>
 
@@ -57,7 +57,7 @@ export default function Process() {
                 delay={index * 0.1}
                 className="flex flex-col h-full"
               >
-                <div className="clay p-6 md:p-8 flex flex-col items-center text-center group bg-[color-mix(in_srgb,var(--bg-color)_90%,transparent)] backdrop-blur-sm relative h-full">
+                <div className="glass p-6 md:p-8 flex flex-col items-center text-center group bg-[color-mix(in_srgb,var(--bg-color)_90%,transparent)] backdrop-blur-sm relative h-full">
                   {/* Mobile/Tablet connector arrow */}
                   {index < steps.length - 1 && (
                     <div className="lg:hidden absolute -bottom-6 text-gray-400 z-20">

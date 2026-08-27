@@ -8,7 +8,7 @@ const serviceDetailsData: Record<string, any> = {
     title: 'Pengembangan Website Enterprise',
     subtitle: 'NEXAWEB',
     icon: Globe,
-    colorClass: 'clay-icon-box-alt2',
+    colorClass: 'glass-icon-box-alt2',
     description: 'Kami merancang dan mengembangkan solusi website kustom berkinerja tinggi, mulai dari company profile elegan, portal B2B, hingga sistem e-commerce kompleks yang siap menangani ribuan transaksi per detik.',
     benefits: [
       'Performa Pemuatan Super Cepat (Optimasi Core Web Vitals)',
@@ -29,7 +29,7 @@ const serviceDetailsData: Record<string, any> = {
     title: 'Desain UI/UX & Interaksi',
     subtitle: 'NEXADESIGN',
     icon: Layout,
-    colorClass: 'clay-icon-box-alt1',
+    colorClass: 'glass-icon-box-alt1',
     description: 'Menciptakan antarmuka digital yang tidak hanya memukau secara visual, tetapi juga sangat intuitif. Kami berfokus pada User-Centered Design (UCD) untuk memastikan setiap klik memiliki tujuan yang jelas.',
     benefits: [
       'Peningkatan Tingkat Retensi Pengguna',
@@ -50,7 +50,7 @@ const serviceDetailsData: Record<string, any> = {
     title: 'Aplikasi Mobile & Web Sederhana',
     subtitle: 'NEXAAPP',
     icon: Smartphone,
-    colorClass: 'clay-icon-box-alt3',
+    colorClass: 'glass-icon-box-alt3',
     description: 'Solusi perangkat lunak cerdas untuk memecahkan masalah spesifik operasional bisnis Anda. Dari aplikasi kasir (POS), absensi pintar, hingga sistem manajemen inventaris.',
     benefits: [
       'Otomatisasi Proses Manual',
@@ -71,7 +71,7 @@ const serviceDetailsData: Record<string, any> = {
     title: 'Identitas Merek & Desain Grafis',
     subtitle: 'NEXABRAND',
     icon: PenTool,
-    colorClass: 'clay-icon-box-alt4',
+    colorClass: 'glass-icon-box-alt4',
     description: 'Kami membantu menerjemahkan nilai, misi, dan visi perusahaan Anda menjadi identitas visual yang kuat, ikonik, dan mudah diingat oleh konsumen di pasar yang kompetitif.',
     benefits: [
       'Kesan Pertama yang Profesional & Kredibel',
@@ -92,7 +92,7 @@ const serviceDetailsData: Record<string, any> = {
     title: 'Pemasaran Digital & SEO',
     subtitle: 'NEXADIGITAL',
     icon: Megaphone,
-    colorClass: 'clay-icon-box',
+    colorClass: 'glass-icon-box',
     description: 'Tingkatkan visibilitas online Anda melalui strategi pemasaran berbasis data. Kami menggabungkan optimasi organik (SEO) dan kampanye iklan berbayar yang presisi (Performance Ads).',
     benefits: [
       'Peningkatan Traffic Organik & Berkualitas',
@@ -151,12 +151,12 @@ export default function ServiceDetailModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="w-full max-w-5xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto clay relative border border-white/20 dark:border-white/5"
+            className="w-full max-w-5xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto glass relative border border-white/20 dark:border-white/5"
           >
             {/* Close Button */}
             <button 
               onClick={close}
-              className="absolute top-4 right-4 md:top-6 md:right-6 z-10 p-3 clay-sm rounded-full text-text hover:text-primary transition-colors"
+              className="absolute top-4 right-4 md:top-6 md:right-6 z-10 p-3 glass-sm rounded-full text-text hover:text-primary transition-colors"
             >
               <X size={24} />
             </button>
@@ -168,7 +168,7 @@ export default function ServiceDetailModal() {
                   <InteractiveIcon icon={data.icon} colorClass={data.colorClass} size={80} />
                 </div>
                 <div>
-                  <span className="inline-block px-4 py-1.5 rounded-full clay-sm text-primary font-bold text-sm tracking-widest uppercase mb-4 border border-primary/10">
+                  <span className="inline-block px-4 py-1.5 rounded-full glass-sm text-primary font-bold text-sm tracking-widest uppercase mb-4 border border-primary/10">
                     {data.subtitle}
                   </span>
                   <h2 className="text-3xl md:text-5xl font-black mb-4 text-text leading-tight">{data.title}</h2>
@@ -181,7 +181,7 @@ export default function ServiceDetailModal() {
               {/* Grid Content */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12">
                 {/* Benefits */}
-                <div className="clay p-6 md:p-8">
+                <div className="glass p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Zap className="text-amber-500" size={28} />
                     <h3 className="text-2xl font-bold text-text">Manfaat Utama</h3>
@@ -197,7 +197,7 @@ export default function ServiceDetailModal() {
                 </div>
 
                 {/* Case Study */}
-                <div className="clay p-6 md:p-8 bg-primary/5 border border-primary/10">
+                <div className="glass p-6 md:p-8 bg-primary/5 border border-primary/10">
                   <div className="flex items-center gap-3 mb-6">
                     <Target className="text-primary" size={28} />
                     <h3 className="text-2xl font-bold text-text">Dampak Nyata (Studi Kasus)</h3>
@@ -215,7 +215,7 @@ export default function ServiceDetailModal() {
                 <h3 className="text-2xl font-bold text-text mb-8 text-center">Proses Eksekusi Kami</h3>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                   {data.process.map((step: any, i: number) => (
-                    <div key={i} className="clay-sm p-5 text-center relative group">
+                    <div key={i} className="glass-sm p-5 text-center relative group">
                       <div className="w-10 h-10 rounded-full bg-primary text-white font-black flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         {i + 1}
                       </div>
@@ -239,7 +239,7 @@ export default function ServiceDetailModal() {
                     close();
                     document.getElementById('kontak')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="clay-btn inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-lg"
+                  className="glass-btn inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-lg"
                 >
                   Mulai Proyek {data.subtitle} <ArrowRight size={20} />
                 </button>

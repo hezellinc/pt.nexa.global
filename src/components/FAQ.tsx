@@ -42,7 +42,7 @@ export default function FAQ() {
     <section id="faq" className="lazy-section py-8 md:py-10 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)]">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-8 md:mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
+          <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
             Tanya Jawab
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Frequently Asked Questions</h2>
@@ -58,7 +58,7 @@ export default function FAQ() {
               direction="up"
               delay={index * 0.08}
             >
-              <div className={`clay-sm overflow-hidden transition-all duration-300 ${openIndex === index ? 'ring-2 ring-primary/20' : ''}`}>
+              <div className={`glass-sm overflow-hidden transition-all duration-300 ${openIndex === index ? 'ring-2 ring-primary/20' : ''}`}>
                 <button 
                   className="w-full text-left p-5 md:p-6 flex items-center justify-between focus:outline-none"
                   onClick={() => toggleFaq(index)}
@@ -67,7 +67,7 @@ export default function FAQ() {
                     <div className="hidden sm:flex shrink-0">
                       <InteractiveIcon 
                         icon={MessageCircle} 
-                        colorClass={openIndex === index ? 'clay-icon-box' : 'clay-icon-box-alt1'} 
+                        colorClass={openIndex === index ? 'glass-icon-box' : 'glass-icon-box-alt1'} 
                         size={20} 
                       />
                     </div>
@@ -75,7 +75,7 @@ export default function FAQ() {
                       {faq.question}
                     </h3>
                   </div>
-                  <div className={`shrink-0 ml-4 p-2 rounded-full clay-sm transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : 'text-gray-500 dark:text-gray-400'}`}>
+                  <div className={`shrink-0 ml-4 p-2 rounded-full glass-sm transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : 'text-gray-500 dark:text-gray-400'}`}>
                     <ChevronDown size={20} />
                   </div>
                 </button>
@@ -89,7 +89,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3 }}
                     >
                       <div className="p-5 md:p-6 pt-0 sm:pl-20">
-                        <div className="p-4 rounded-2xl bg-black/5 dark:bg-white/5 opacity-90 leading-relaxed text-sm md:text-base">
+                        <div className="p-4 rounded-2xl bg-white/5 opacity-90 leading-relaxed text-sm md:text-base">
                           {faq.answer}
                         </div>
                       </div>

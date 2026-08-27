@@ -14,25 +14,25 @@ const catalogData = {
       title: "Corporate Website (Company Profile)",
       desc: "Website profesional untuk membangun kredibilitas dan representasi resmi perusahaan Anda di dunia digital. Cocok untuk B2B.",
       icon: Briefcase,
-      colorClass: "clay-icon-box"
+      colorClass: "glass-icon-box"
     },
     {
       title: "E-Commerce System",
       desc: "Toko online canggih terintegrasi dengan payment gateway dan sistem manajemen pesanan cerdas.",
       icon: ShoppingBag,
-      colorClass: "clay-icon-box-alt1"
+      colorClass: "glass-icon-box-alt1"
     },
     {
       title: "Custom Web Application",
       desc: "Aplikasi berbasis web (SaaS) khusus untuk operasional bisnis, seperti portal e-learning, sistem manajemen data, atau forum.",
       icon: Layout,
-      colorClass: "clay-icon-box-alt2"
+      colorClass: "glass-icon-box-alt2"
     },
     {
       title: "Landing Page Khusus (Campaign)",
       desc: "Halaman tunggal yang didesain khusus dengan copywriting persuasif untuk memaksimalkan konversi iklan atau peluncuran produk.",
       icon: Globe,
-      colorClass: "clay-icon-box-alt3"
+      colorClass: "glass-icon-box-alt3"
     }
   ],
   NEXAAPP: [
@@ -40,25 +40,25 @@ const catalogData = {
       title: "Smart POS (Point of Sale)",
       desc: "Aplikasi kasir modern multi-cabang berbasis cloud untuk restoran, ritel, atau bisnis layanan dengan pencatatan otomatis.",
       icon: Monitor,
-      colorClass: "clay-icon-box-alt1"
+      colorClass: "glass-icon-box-alt1"
     },
     {
       title: "HR & Attendance System",
       desc: "Sistem absensi dan manajemen karyawan terintegrasi dengan fitur geolokasi, pengajuan cuti, dan rekap penggajian.",
       icon: Database,
-      colorClass: "clay-icon-box-alt4"
+      colorClass: "glass-icon-box-alt4"
     },
     {
       title: "Inventory & Warehouse App",
       desc: "Aplikasi pelacakan stok barang secara real-time, manajemen pesanan, dan laporan keluar masuk gudang yang akurat.",
       icon: Layers,
-      colorClass: "clay-icon-box-alt2"
+      colorClass: "glass-icon-box-alt2"
     },
     {
       title: "Mobile App Konsumen (Android/iOS)",
       desc: "Pembuatan aplikasi mobile ringan untuk kemudahan interaksi langsung antara bisnis Anda dan konsumen setia.",
       icon: Smartphone,
-      colorClass: "clay-icon-box"
+      colorClass: "glass-icon-box"
     }
   ],
   NEXADESIGN: [
@@ -66,19 +66,19 @@ const catalogData = {
       title: "UI/UX Mobile App Design",
       desc: "Riset dan perancangan antarmuka aplikasi seluler yang intuitif, nyaman, dan berpusat pada pengalaman pengguna (User-Centric).",
       icon: Smartphone,
-      colorClass: "clay-icon-box-alt3"
+      colorClass: "glass-icon-box-alt3"
     },
     {
       title: "Web Dashboard Interface",
       desc: "Desain panel admin atau dashboard SaaS yang rapi, informatif, dan menyederhanakan data kompleks menjadi visual yang mudah dibaca.",
       icon: Layout,
-      colorClass: "clay-icon-box-alt1"
+      colorClass: "glass-icon-box-alt1"
     },
     {
       title: "Interactive Prototyping",
       desc: "Pembuatan purwarupa (mockup) interaktif klik-tayang yang bisa diuji coba secara langsung sebelum proses programming dimulai.",
       icon: PenTool,
-      colorClass: "clay-icon-box-alt2"
+      colorClass: "glass-icon-box-alt2"
     }
   ],
   NEXABRAND: [
@@ -86,25 +86,25 @@ const catalogData = {
       title: "Corporate Logo Design",
       desc: "Perancangan logo perusahaan berstandar internasional yang ikonik, bermakna, dan mampu merepresentasikan visi misi bisnis Anda.",
       icon: PenTool,
-      colorClass: "clay-icon-box-alt4"
+      colorClass: "glass-icon-box-alt4"
     },
     {
       title: "Brand Guidelines (Brand Book)",
       desc: "Buku pedoman identitas visual lengkap (palet warna, tipografi, aturan penggunaan logo) untuk menjaga konsistensi brand Anda.",
       icon: BookOpen,
-      colorClass: "clay-icon-box"
+      colorClass: "glass-icon-box"
     },
     {
       title: "Social Media Kit & Feed",
       desc: "Desain template untuk media sosial (Instagram, LinkedIn) yang seragam dan profesional untuk kebutuhan posting rutin.",
       icon: Share2,
-      colorClass: "clay-icon-box-alt1"
+      colorClass: "glass-icon-box-alt1"
     },
     {
       title: "Print & Media Banner",
       desc: "Desain keperluan cetak seperti pamflet promosi, billboard, roll-up banner, atau company profile fisik eksklusif.",
       icon: ImageIcon,
-      colorClass: "clay-icon-box-alt2"
+      colorClass: "glass-icon-box-alt2"
     }
   ],
   NEXADIGITAL: [
@@ -112,25 +112,25 @@ const catalogData = {
       title: "SEO Optimization",
       desc: "Optimasi mesin pencari organik agar website perusahaan Anda selalu muncul di halaman pertama Google untuk kata kunci relevan.",
       icon: Search,
-      colorClass: "clay-icon-box"
+      colorClass: "glass-icon-box"
     },
     {
       title: "Performance Ads (Meta & Google)",
       desc: "Manajemen kampanye iklan berbayar secara presisi di Google Search, Instagram, dan Facebook untuk mendapatkan leads berkualitas.",
       icon: Megaphone,
-      colorClass: "clay-icon-box-alt1"
+      colorClass: "glass-icon-box-alt1"
     },
     {
       title: "Social Media Management",
       desc: "Pengelolaan akun media sosial perusahaan, mulai dari perencanaan konten, copywriting, hingga interaksi harian.",
       icon: Share2,
-      colorClass: "clay-icon-box-alt3"
+      colorClass: "glass-icon-box-alt3"
     },
     {
       title: "Data Analytics & Reporting",
       desc: "Penyusunan laporan konversi bulanan berbasis data (Google Analytics) untuk mengevaluasi dan merencanakan langkah pemasaran selanjutnya.",
       icon: BarChart3,
-      colorClass: "clay-icon-box-alt2"
+      colorClass: "glass-icon-box-alt2"
     }
   ]
 };
@@ -163,7 +163,7 @@ export default function Catalog() {
     <section id="katalog" className="lazy-section py-8 md:py-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-10 md:mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
+          <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
             Katalog Layanan Digital
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Detail Produk & Layanan</h2>
@@ -174,7 +174,7 @@ export default function Catalog() {
 
         {/* Tab Navigation */}
         <ScrollReveal direction="up" delay={0.1} className="mb-10">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4 p-2 bg-[color-mix(in_srgb,var(--bg-color)_80%,transparent)] backdrop-blur-md rounded-2xl md:rounded-full clay-sm max-w-fit mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 p-2 bg-[color-mix(in_srgb,var(--bg-color)_80%,transparent)] backdrop-blur-md rounded-2xl md:rounded-full glass-sm max-w-fit mx-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -204,13 +204,13 @@ export default function Catalog() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
               >
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6">
-                    <div className="shrink-0 mt-1 w-12 h-12 rounded-2xl bg-black/10 dark:bg-white/10 animate-pulse"></div>
+                  <div key={i} className="glass p-6 md:p-8 flex items-start gap-4 md:gap-6">
+                    <div className="shrink-0 mt-1 w-12 h-12 rounded-2xl bg-white/10 animate-pulse"></div>
                     <div className="w-full">
-                      <div className="h-6 w-3/4 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-4"></div>
-                      <div className="h-4 w-full bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-2"></div>
-                      <div className="h-4 w-5/6 bg-black/10 dark:bg-white/10 rounded-md animate-pulse mb-6"></div>
-                      <div className="h-4 w-32 bg-black/10 dark:bg-white/10 rounded-md animate-pulse"></div>
+                      <div className="h-6 w-3/4 bg-white/10 rounded-md animate-pulse mb-4"></div>
+                      <div className="h-4 w-full bg-white/10 rounded-md animate-pulse mb-2"></div>
+                      <div className="h-4 w-5/6 bg-white/10 rounded-md animate-pulse mb-6"></div>
+                      <div className="h-4 w-32 bg-white/10 rounded-md animate-pulse"></div>
                     </div>
                   </div>
                 ))}
@@ -227,7 +227,7 @@ export default function Catalog() {
                 {catalogData[activeCategory].map((product, index) => (
                   <div 
                     key={product.title} 
-                    className="clay p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+                    className="glass p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
                     onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: activeCategory } }))}
                   >
                     <div className="shrink-0 mt-1">

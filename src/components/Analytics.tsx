@@ -57,11 +57,11 @@ export default function Analytics() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="clay p-6 md:p-8 relative"
+          className="glass p-6 md:p-8 relative"
         >
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
             <div className="flex items-center gap-4">
-              <InteractiveIcon icon={TrendingUp} colorClass="clay-icon-box-alt2" size={24} />
+              <InteractiveIcon icon={TrendingUp} colorClass="glass-icon-box-alt2" size={24} />
               <h3 className="text-xl md:text-2xl font-bold text-text">Live Cashflow Market</h3>
             </div>
             <div className="md:ml-auto flex items-center gap-2">

@@ -7,7 +7,7 @@ interface InteractiveIconProps {
   size?: number;
 }
 
-export default function InteractiveIcon({ icon: Icon, colorClass = "clay-icon-box", size = 32 }: InteractiveIconProps) {
+export default function InteractiveIcon({ icon: Icon, colorClass = "glass-icon-box", size = 32 }: InteractiveIconProps) {
   return (
     <motion.div 
       className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center ${colorClass} cursor-pointer`}

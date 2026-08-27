@@ -13,28 +13,28 @@ export default function Hero() {
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
           className="absolute top-1/4 left-[5%] md:left-[10%] opacity-30 md:opacity-50"
         >
-          <InteractiveIcon icon={PenTool} colorClass="clay-icon-box-alt1" size={24} />
+          <InteractiveIcon icon={PenTool} colorClass="glass-icon-box-alt1" size={24} />
         </motion.div>
         <motion.div 
           animate={{ y: [0, 40, 0], x: [0, -20, 0] }} 
           transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
           className="absolute top-1/3 right-[5%] md:right-[15%] opacity-30 md:opacity-50"
         >
-          <InteractiveIcon icon={Monitor} colorClass="clay-icon-box-alt2" size={24} />
+          <InteractiveIcon icon={Monitor} colorClass="glass-icon-box-alt2" size={24} />
         </motion.div>
         <motion.div 
           animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }} 
           transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
           className="absolute bottom-1/4 left-[10%] md:left-[20%] opacity-30 md:opacity-50"
         >
-          <InteractiveIcon icon={Smartphone} colorClass="clay-icon-box-alt3" size={24} />
+          <InteractiveIcon icon={Smartphone} colorClass="glass-icon-box-alt3" size={24} />
         </motion.div>
         <motion.div 
           animate={{ y: [0, 30, 0], rotate: [0, -15, 15, 0] }} 
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
           className="absolute bottom-1/3 right-[5%] md:right-[10%] opacity-30 md:opacity-50"
         >
-          <InteractiveIcon icon={LayoutTemplate} colorClass="clay-icon-box-alt4" size={24} />
+          <InteractiveIcon icon={LayoutTemplate} colorClass="glass-icon-box-alt4" size={24} />
         </motion.div>
       </div>
 
@@ -43,7 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-block mb-6 px-4 md:px-6 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase"
+          className="inline-block mb-6 px-4 md:px-6 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase"
         >
           Inovasi Digital Tanpa Batas
         </motion.div>
@@ -72,10 +72,10 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full px-6"
         >
-          <a href="#layanan" className="clay-btn px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
+          <a href="#layanan" className="glass-btn px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
             Eksplorasi Layanan
           </a>
-          <a href="#kontak" className="clay-btn-accent px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
+          <a href="#kontak" className="glass-btn-accent px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
             Konsultasi Gratis
           </a>
         </motion.div>

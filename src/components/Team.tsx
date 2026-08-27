@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { User, Briefcase, Palette, Calculator, Code } from 'lucide-react';
+import { User, Briefcase, Palette, Calculator, Code, Megaphone } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
 import ScrollReveal from './ScrollReveal';
 
@@ -8,7 +8,7 @@ const teamMembers = [
     name: 'Muhammad Zyldan Muzhaffar',
     role: 'CEO',
     icon: Briefcase,
-    colorClass: 'clay-icon-box',
+    colorClass: 'glass-icon-box',
     initials: 'MZ',
     image: undefined
   },
@@ -16,24 +16,48 @@ const teamMembers = [
     name: 'Muhammad Fariz Alfauzi',
     role: 'Marketing & Dev',
     icon: Code,
-    colorClass: 'clay-icon-box-alt2',
+    colorClass: 'glass-icon-box-alt2',
     initials: 'MF',
     image: undefined
   },
   {
-    name: 'Wolid Herdiansyah',
-    role: 'Designer UI/UX',
-    icon: Palette,
-    colorClass: 'clay-icon-box-alt1',
-    initials: 'WH',
+    name: 'Zulpa Apriliani',
+    role: 'Keuangan',
+    icon: Calculator,
+    colorClass: 'glass-icon-box-alt4',
+    initials: 'ZA',
+    image: undefined
+  },
+  {
+    name: 'Annas Nasri',
+    role: 'Keuangan',
+    icon: Calculator,
+    colorClass: 'glass-icon-box-alt3',
+    initials: 'AN',
+    image: undefined
+  },
+  {
+    name: 'Dimas Alvino',
+    role: 'Marketing',
+    icon: Megaphone,
+    colorClass: 'glass-icon-box-alt1',
+    initials: 'DA',
     image: undefined
   },
   {
     name: 'Reihan Alvin',
-    role: 'Keuangan',
-    icon: Calculator,
-    colorClass: 'clay-icon-box-alt4',
+    role: 'Desainer',
+    icon: Palette,
+    colorClass: 'glass-icon-box-accent',
     initials: 'RA',
+    image: undefined
+  },
+  {
+    name: 'Wolid Herdiansyah',
+    role: 'Desainer',
+    icon: Palette,
+    colorClass: 'glass-icon-box-alt2',
+    initials: 'WH',
     image: undefined
   }
 ];
@@ -59,7 +83,7 @@ export default function Team() {
             >
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="clay p-6 md:p-8 flex flex-col items-center text-center h-full group"
+                className="glass p-6 md:p-8 flex flex-col items-center text-center h-full group"
               >
                 <div className="mb-6 relative">
                   {member.image ? (
@@ -71,12 +95,12 @@ export default function Team() {
                       {member.initials}
                     </div>
                   )}
-                  <div className="absolute -bottom-2 -right-2 bg-[var(--clay-bg)] rounded-full p-2 shadow-md">
+                  <div className="absolute -bottom-2 -right-2 bg-[var(--glass-bg)] rounded-full p-2 shadow-md">
                     <member.icon size={20} className="text-text" />
                   </div>
                 </div>
                 <h3 className="text-lg md:text-xl font-bold mb-2 text-text group-hover:text-primary transition-colors">{member.name}</h3>
-                <p className="text-primary font-semibold text-sm md:text-base bg-black/5 dark:bg-white/5 px-4 py-1 rounded-full shadow-sm">
+                <p className="text-primary font-semibold text-sm md:text-base bg-white/5 px-4 py-1 rounded-full shadow-sm">
                   {member.role}
                 </p>
               </motion.div>

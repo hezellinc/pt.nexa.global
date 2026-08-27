@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     avatarColor: 'bg-primary/20 text-primary border-primary/30',
     rating: 5,
     service: 'NEXAWEB & NEXAAPP',
-    comment: 'Implementasi infrastruktur cloud dan portal web enterprise dari NexaTech meningkatkan efisiensi operasional tim kami hingga 40%. Desain claymorphism-nya sangat bersih, modern, dan memberikan impresi sangat profesional kepada mitra bisnis kami.',
+    comment: 'Implementasi infrastruktur cloud dan portal web enterprise dari NexaTech meningkatkan efisiensi operasional tim kami hingga 40%. Desain glassmorphism-nya sangat bersih, modern, dan memberikan impresi sangat profesional kepada mitra bisnis kami.',
     impactMetric: 'Efisiensi Operasional +40%'
   },
   {
@@ -152,7 +152,7 @@ export default function Testimonials() {
         
         {/* Section Header */}
         <ScrollReveal direction="up" className="text-center mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[var(--clay-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
             <MessageSquare size={16} className="text-primary" />
             <span>Kepercayaan Klien</span>
           </div>
@@ -171,12 +171,12 @@ export default function Testimonials() {
           onMouseLeave={() => setIsPlaying(true)}
         >
           {/* Main Claymorphism Card */}
-          <div className="clay min-h-[380px] md:min-h-[340px] p-6 sm:p-8 md:p-12 relative flex flex-col justify-between overflow-hidden">
+          <div className="glass min-h-[380px] md:min-h-[340px] p-6 sm:p-8 md:p-12 relative flex flex-col justify-between overflow-hidden">
             
             {/* Top Decorative Quote & Badge Header */}
             <div className="flex items-center justify-between gap-4 mb-6 relative z-10">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl clay-sm flex items-center justify-center text-primary bg-primary/10">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass-sm flex items-center justify-center text-primary bg-primary/10">
                   <Quote size={28} className="fill-primary/20 text-primary" />
                 </div>
                 <div>
@@ -192,7 +192,7 @@ export default function Testimonials() {
               </div>
 
               {/* Impact Metric Badge */}
-              <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl clay-sm text-xs md:text-sm font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-sm text-xs md:text-sm font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                 <span>{activeTestimonial.impactMetric}</span>
               </div>
@@ -239,7 +239,7 @@ export default function Testimonials() {
               </div>
 
               {/* Mobile Impact Metric Badge */}
-              <div className="sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-lg clay-sm text-xs font-bold text-emerald-600 dark:text-emerald-400 self-start">
+              <div className="sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-lg glass-sm text-xs font-bold text-emerald-600 dark:text-emerald-400 self-start">
                 <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
                 <span>{activeTestimonial.impactMetric}</span>
               </div>
@@ -253,7 +253,7 @@ export default function Testimonials() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="p-2.5 clay-sm rounded-xl text-text hover:text-primary transition-colors flex items-center gap-2 text-xs font-semibold"
+                className="p-2.5 glass-sm rounded-xl text-text hover:text-primary transition-colors flex items-center gap-2 text-xs font-semibold"
                 title={isPlaying ? "Jeda Otomatis" : "Putar Otomatis"}
               >
                 {isPlaying ? (
@@ -293,14 +293,14 @@ export default function Testimonials() {
             <div className="flex items-center gap-3">
               <button
                 onClick={prevSlide}
-                className="p-3 clay-sm rounded-2xl text-text hover:text-primary hover:scale-105 transition-all active:scale-95"
+                className="p-3 glass-sm rounded-2xl text-text hover:text-primary hover:scale-105 transition-all active:scale-95"
                 aria-label="Ulasan Sebelumnya"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-3 clay-sm rounded-2xl text-text hover:text-primary hover:scale-105 transition-all active:scale-95"
+                className="p-3 glass-sm rounded-2xl text-text hover:text-primary hover:scale-105 transition-all active:scale-95"
                 aria-label="Ulasan Selanjutnya"
               >
                 <ChevronRight size={20} />
