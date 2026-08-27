@@ -143,7 +143,7 @@ export default function NexaAssistant() {
                       : 'glass-sm bg-[var(--glass-bg)] text-text rounded-bl-sm'
                   }`}>
                     {msg.role === 'assistant' && (
-                      <div className="flex items-center gap-2 mb-2 opacity-80 border-b border-black/10 dark:border-white/10 pb-2">
+                      <div className="flex items-center gap-2 mb-2 opacity-80 border-b border-white/10 pb-2">
                         <Bot size={14} className="text-primary" /> <span className="text-xs font-bold text-primary">Nexa Assistant</span>
                       </div>
                     )}

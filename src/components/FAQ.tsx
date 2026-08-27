@@ -75,7 +75,7 @@ export default function FAQ() {
                       {faq.question}
                     </h3>
                   </div>
-                  <div className={`shrink-0 ml-4 p-2 rounded-full glass-sm transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : 'text-gray-500 dark:text-gray-400'}`}>
+                  <div className={`shrink-0 ml-4 p-2 rounded-full glass-sm transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : 'text-gray-400'}`}>
                     <ChevronDown size={20} />
                   </div>
                 </button>

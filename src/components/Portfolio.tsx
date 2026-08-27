@@ -102,7 +102,7 @@ export default function Portfolio() {
                 className={`px-4 md:px-5 py-2 rounded-xl md:rounded-full text-sm font-bold transition-all duration-300 ${
                   filter === cat
                     ? 'bg-primary text-white shadow-md transform scale-105'
-                    : 'text-text hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
+                    : 'text-text hover:bg-white/5 opacity-70 hover:opacity-100'
                 }`}
               >
                 {cat}

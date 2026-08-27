@@ -47,7 +47,7 @@ const testimonials: Testimonial[] = [
     role: 'Director of Operations',
     company: 'Medika Digital Enterprise',
     avatar: 'HW',
-    avatarColor: 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
+    avatarColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
     rating: 5,
     service: 'NEXAPROFILE & NEXADIGITAL',
     comment: 'Profil perusahaan interaktif dan strategi kampanye pemasaran digital dari NexaTech membantu kami menarik minat klien korporat dengan tingkat konversi penjualan meningkat 2.5x lipat dalam kurun waktu 3 bulan saja.',
@@ -59,7 +59,7 @@ const testimonials: Testimonial[] = [
     role: 'Co-Founder & VP Growth',
     company: 'EduTech Indonesia',
     avatar: 'SR',
-    avatarColor: 'bg-purple-500/20 text-purple-600 dark:text-purple-400 border-purple-500/30',
+    avatarColor: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
     rating: 5,
     service: 'NEXAAPP & NEXADESIGN',
     comment: 'Proses pengerjaan aplikasi web berlangsung cepat dan tepat waktu. Komunikasi tim sangat transparan, sistematis, dan hasil akhirnya melampaui ekspektasi. Sangat merekomendasikan NexaTech bagi bisnis yang ingin berkembang!',
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     role: 'Managing Director',
     company: 'Logistics Smart System',
     avatar: 'KT',
-    avatarColor: 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30',
+    avatarColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
     rating: 5,
     service: 'NEXAWEB & ANALYTICS',
     comment: 'Dashboard analitik interaktif yang dibangun NexaTech memberikan wawasan real-time yang sangat berharga bagi keputusan bisnis strategis perusahaan kami. Solusi B2B terbaik yang pernah kami gunakan.',
@@ -192,7 +192,7 @@ export default function Testimonials() {
               </div>
 
               {/* Impact Metric Badge */}
-              <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-sm text-xs md:text-sm font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-sm text-xs md:text-sm font-bold text-emerald-400 border border-emerald-500/20">
                 <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                 <span>{activeTestimonial.impactMetric}</span>
               </div>
@@ -239,7 +239,7 @@ export default function Testimonials() {
               </div>
 
               {/* Mobile Impact Metric Badge */}
-              <div className="sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-lg glass-sm text-xs font-bold text-emerald-600 dark:text-emerald-400 self-start">
+              <div className="sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-lg glass-sm text-xs font-bold text-emerald-400 self-start">
                 <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
                 <span>{activeTestimonial.impactMetric}</span>
               </div>

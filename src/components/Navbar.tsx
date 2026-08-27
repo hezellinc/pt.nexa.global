@@ -97,7 +97,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-4 p-3 rounded-2xl hover:bg-white/50 transition-colors group"
+                  className="flex items-center gap-4 p-3 rounded-2xl hover:bg-white/10 transition-colors group"
                 >
                   <div className={`w-12 h-12 flex items-center justify-center rounded-2xl shrink-0 ${link.colorClass} group-hover:scale-110 transition-transform`}>
                     <link.icon size={20} className="text-white" />

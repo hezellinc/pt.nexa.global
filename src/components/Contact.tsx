@@ -144,7 +144,7 @@ export default function Contact() {
                             {services.map(service => (
                               <div 
                                 key={service}
-                                className="px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer flex items-center justify-between text-text hover:text-primary transition-colors"
+                                className="px-4 py-3 hover:bg-white/5 cursor-pointer flex items-center justify-between text-text hover:text-primary transition-colors"
                                 onClick={() => {
                                   setSelectedService(service);
                                   setIsDropdownOpen(false);

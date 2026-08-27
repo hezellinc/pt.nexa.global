@@ -22,10 +22,25 @@ import Footer from './components/Footer';
 import NexaAssistant from './components/NexaAssistant';
 import ServiceDetailModal from './components/ServiceDetailModal';
 import PortfolioDetailModal from './components/PortfolioDetailModal';
+import Plasma from './components/Plasma';
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden font-sans">
+    <div className="min-h-screen overflow-x-hidden font-sans relative">
+      <div className="fixed inset-0 z-[-1]">
+        <Plasma 
+          color="#b497cf"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={true}
+          renderScale={0.55}
+          maxDpr={1.5}
+          targetFps={60}
+          iterations={60}
+        />
+      </div>
       <Navbar />
       <main>
         <Hero />

@@ -149,7 +149,7 @@ export default function PortfolioDetailModal() {
 
                 {/* Result */}
                 <div className="glass p-6 md:p-8 bg-emerald-500/5 border border-emerald-500/20">
-                  <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-3 border-b border-emerald-500/20 pb-2">Hasil Akhir</h3>
+                  <h3 className="text-xl font-bold text-emerald-400 mb-3 border-b border-emerald-500/20 pb-2">Hasil Akhir</h3>
                   <p className="opacity-90 leading-relaxed text-base md:text-lg font-medium">
                     {data.result}
                   </p>

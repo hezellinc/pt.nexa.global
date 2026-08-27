@@ -11,7 +11,7 @@ export default function ContactMap() {
         allowFullScreen={false} 
         loading="lazy" 
         referrerPolicy="no-referrer-when-downgrade"
-        className="absolute inset-0 z-0 grayscale-0 dark:grayscale-[20%] dark:invert-[90%] dark:hue-rotate-180 transition-all duration-500 hover:grayscale-0 hover:invert-0 hover:hue-rotate-0"
+        className="absolute inset-0 z-0 grayscale-[20%] invert-[90%] hue-rotate-180 transition-all duration-500 hover:grayscale-0 hover:invert-0 hover:hue-rotate-0"
       ></iframe>
       
       {/* Layer Interaksi (Opsional: agar tetap empuk ala glassmorphism) */}

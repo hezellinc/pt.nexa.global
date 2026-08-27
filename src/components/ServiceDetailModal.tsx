@@ -151,7 +151,7 @@ export default function ServiceDetailModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="w-full max-w-5xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto glass relative border border-white/20 dark:border-white/5"
+            className="w-full max-w-5xl max-h-[90vh] bg-[var(--bg-color)] rounded-[2rem] shadow-2xl overflow-y-auto glass relative border border-white/10"
           >
             {/* Close Button */}
             <button 

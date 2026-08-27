@@ -182,7 +182,7 @@ export default function Catalog() {
                 className={`px-4 md:px-6 py-2.5 rounded-xl md:rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
                   activeCategory === cat
                     ? 'bg-primary text-white shadow-md transform scale-105'
-                    : 'text-text hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
+                    : 'text-text hover:bg-white/5 opacity-70 hover:opacity-100'
                 }`}
               >
                 {cat}
