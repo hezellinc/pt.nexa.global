@@ -6,49 +6,49 @@ import ScrollReveal from './ScrollReveal';
 const portfolioData = [
   {
     id: 'p1',
-    title: 'EcoShop E-Commerce',
-    category: 'NEXAWEB',
+    title: 'Topologi Fiber Optic 10G',
+    category: 'NEXANET',
     imgSrc: '/nexaweb.png',
-    shortDesc: 'Platform e-commerce ramah lingkungan dengan sistem inventaris dan payment gateway terintegrasi.',
+    shortDesc: 'Instalasi jaringan Fiber Optic untuk instansi pemerintahan dengan SLA 99.9% uptime.',
   },
   {
     id: 'p2',
-    title: 'FinTrack Dashboard',
-    category: 'NEXADESIGN',
+    title: 'Migrasi Server Cloud B2B',
+    category: 'NEXASERVER',
     imgSrc: '/nexadesign.png',
-    shortDesc: 'Desain ulang UI/UX dashboard analitik keuangan untuk B2B SaaS, meningkatkan retensi pengguna.',
+    shortDesc: 'Pemindahan infrastruktur server lokal ke AWS Cloud untuk 5 cabang perusahaan nasional.',
   },
   {
     id: 'p3',
-    title: 'Smart HR Absensi',
-    category: 'NEXAAPP',
+    title: 'Smart Office IoT System',
+    category: 'NEXAIOT',
     imgSrc: '/nexaapp.png',
-    shortDesc: 'Aplikasi mobile absensi karyawan berbasis geolokasi dan pengenalan wajah (Face ID).',
+    shortDesc: 'Implementasi kontrol lampu, suhu, dan akses pintu pintar terintegrasi dengan mobile app.',
   },
   {
     id: 'p4',
-    title: 'Bite & Brew Rebranding',
-    category: 'NEXABRAND',
+    title: 'Sistem Informasi Rumah Sakit',
+    category: 'NEXAWEB',
     imgSrc: '/nexabrand.png',
-    shortDesc: 'Pembuatan identitas visual lengkap, logo, dan brand guidelines untuk waralaba kafe nasional.',
+    shortDesc: 'Aplikasi berbasis web untuk pendaftaran pasien, rekam medis, dan sinkronisasi BPJS.',
   },
   {
     id: 'p5',
-    title: 'TechGrow SEO Campaign',
-    category: 'NEXADIGITAL',
+    title: 'Pemasangan IP Camera 4K',
+    category: 'NEXASECURE',
     imgSrc: '/nexadigital.png',
-    shortDesc: 'Kampanye SEO dan manajemen Ads yang meningkatkan traffic organik klien sebesar 300% dalam 4 bulan.',
+    shortDesc: 'Instalasi 150 titik CCTV resolusi 4K dengan sistem penyimpanan NVR cerdas.',
   },
   {
     id: 'p6',
-    title: 'MedikaCare Portal',
-    category: 'NEXAWEB',
+    title: 'Firewall & Keamanan Data',
+    category: 'NEXASECURE',
     imgSrc: '/nexaprofile.png',
-    shortDesc: 'Portal pendaftaran pasien rumah sakit dengan integrasi rekam medis elektronik yang aman.',
+    shortDesc: 'Setup Fortinet dan Mikrotik untuk memblokir serangan malware di jaringan universitas.',
   }
 ];
 
-const categories = ['Semua', 'NEXAWEB', 'NEXAAPP', 'NEXADESIGN', 'NEXABRAND', 'NEXADIGITAL'];
+const categories = ['Semua', 'NEXANET', 'NEXASERVER', 'NEXAWEB', 'NEXASECURE', 'NEXAIOT'];
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('Semua');

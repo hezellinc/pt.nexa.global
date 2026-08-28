@@ -3,14 +3,14 @@ import ScrollReveal from './ScrollReveal';
 
 const plans = [
   {
-    name: 'Starter',
-    price: 'Rp 2.500.000',
-    description: 'Cocok untuk UMKM dan bisnis rintisan yang ingin go digital.',
+    name: 'Basic Network',
+    price: 'Rp 3.500.000',
+    description: 'Cocok untuk kantor kecil yang butuh internet stabil dan manajemen dasar.',
     features: [
-      'Website Landing Page', 
-      'Domain & Hosting 1 Tahun', 
-      'Desain UI/UX Basic', 
-      'Distribusi via Tautan Web',
+      'Setup Router Mikrotik (Basic)', 
+      'Manajemen Bandwidth per User', 
+      'Instalasi Access Point', 
+      'Konfigurasi Jaringan LAN Terpusat',
       'Dukungan Teknis 1 Bulan'
     ],
     colorClass: 'glass-icon-box-alt2',
@@ -18,14 +18,14 @@ const plans = [
     popular: false
   },
   {
-    name: 'Professional',
-    price: 'Rp 7.500.000',
-    description: 'Solusi lengkap untuk perusahaan yang membutuhkan fungsionalitas tinggi.',
+    name: 'Smart Office & Web',
+    price: 'Rp 12.500.000',
+    description: 'Solusi lengkap TJKT dan aplikasi web (Sistem Informasi/Company Profile).',
     features: [
-      'Website Multi-halaman & CMS', 
-      'Integrasi Payment Gateway (Penjualan)', 
-      'Desain UI/UX Custom & Animasi', 
-      'Distribusi Web & Aplikasi PWA', 
+      'Pembuatan Website Company Profile/Sistem', 
+      'Instalasi Server Lokal (Linux/Windows)', 
+      'Pemasangan IP Camera / CCTV', 
+      'Setup VPN Jarak Jauh', 
       'Dukungan Teknis 6 Bulan'
     ],
     colorClass: 'glass-icon-box',
@@ -33,15 +33,15 @@ const plans = [
     popular: true
   },
   {
-    name: 'Enterprise',
+    name: 'Enterprise IT',
     price: 'Custom',
-    description: 'Pengembangan skala besar dengan kebutuhan infrastruktur khusus.',
+    description: 'Infrastruktur Data Center, Cloud, dan Jaringan skala besar untuk korporat.',
     features: [
-      'Sistem Informasi & E-Commerce Kompleks', 
-      'Aplikasi Mobile (Android & iOS)', 
-      'UI/UX Research & Testing', 
-      'Distribusi ke App Store & Play Store', 
-      'Dukungan Teknis 1 Tahun'
+      'Desain Topologi Fiber Optic', 
+      'Migrasi Cloud Server (AWS/Google)', 
+      'Sistem Absensi Biometrik', 
+      'Audit & Keamanan Jaringan Penuh', 
+      'Dukungan Teknis SLA 1 Tahun'
     ],
     colorClass: 'glass-icon-box-alt1',
     buttonClass: 'glass-btn-accent',

@@ -1,30 +1,30 @@
-import { Lightbulb, PenTool, Code, Rocket, ArrowRight } from 'lucide-react';
+import { ClipboardCheck, Server, Workflow, ShieldCheck, ArrowRight } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
 import ScrollReveal from './ScrollReveal';
 
 const steps = [
   {
-    icon: Lightbulb,
-    title: '1. Riset & Pengiklanan',
-    description: 'Kami menganalisis pasar Anda, merancang strategi pengiklanan, dan menentukan konsep produk yang paling menjual.',
+    icon: ClipboardCheck,
+    title: '1. Site Survey & Perancangan',
+    description: 'Kami melakukan survei lokasi fisik, merancang topologi jaringan, dan menyusun BoQ (Bill of Quantities) perangkat.',
     colorClass: 'glass-icon-box-alt4'
   },
   {
-    icon: PenTool,
-    title: '2. Desain UI/UX',
-    description: 'Pembuatan wireframe dan prototipe interaktif agar Anda dapat melihat gambaran nyata sebelum dikembangkan.',
+    icon: Workflow,
+    title: '2. Instalasi Infrastruktur',
+    description: 'Penarikan kabel (Fiber Optic/LAN), pemasangan rak server, instalasi CCTV, dan pengaturan jalur kabel yang rapi.',
     colorClass: 'glass-icon-box-alt1'
   },
   {
-    icon: Code,
-    title: '3. Pengembangan & Integrasi',
-    description: 'Proses coding (Front-end & Back-end) serta integrasi fitur penjualan seperti Payment Gateway.',
+    icon: Server,
+    title: '3. Konfigurasi Sistem',
+    description: 'Setup Router Mikrotik/Cisco, instalasi OS Server (Linux/Windows), integrasi aplikasi web, dan konfigurasi VPN.',
     colorClass: 'glass-icon-box-alt2'
   },
   {
-    icon: Rocket,
-    title: '4. Peluncuran & Distribusi',
-    description: 'Mendistribusikan produk digital ke server cloud (Web) atau mempublikasikannya ke App Store/Play Store (Mobile).',
+    icon: ShieldCheck,
+    title: '4. Testing & Handover',
+    description: 'Uji beban koneksi (load testing), pengecekan firewall, pelatihan staf internal, dan serah terima dokumen jaringan.',
     colorClass: 'glass-icon-box'
   }
 ];
@@ -37,9 +37,9 @@ export default function Process() {
           <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
             Cara Kerja Kami
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Proses End-to-End</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Proses End-to-End TJKT</h2>
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto px-2">
-            Dari perencanaan strategis, pemasaran (pengiklanan), pembuatan produk, hingga pendistribusian ke tangan pengguna.
+            Dari perencanaan topologi, penyediaan hardware, konfigurasi server, hingga implementasi keamanan siber secara menyeluruh.
           </p>
         </ScrollReveal>
 

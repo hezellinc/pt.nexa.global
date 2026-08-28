@@ -6,60 +6,52 @@ export default function Services() {
   const services = [
     { 
       id: 1,
-      title: 'NEXAWEB',
-      subtitle: 'WEBSITE CREATION',
-      desc: 'Pembuatan website company profile, e-commerce, hingga landing page interaktif dengan performa tinggi dan SEO friendly.', 
+      title: 'NEXANET',
+      subtitle: 'NETWORK INFRASTRUCTURE',
+      desc: 'Instalasi dan konfigurasi jaringan LAN, WAN, Fiber Optic, dan manajemen router/switch (Mikrotik/Cisco).', 
       img: "/nexaweb.png",
       colorClass: 'glass-icon-box-alt2'
     },
     { 
       id: 2,
-      title: 'NEXAAPP',
-      subtitle: 'SIMPLE APPLICATION',
-      desc: 'Pengembangan aplikasi web dan mobile ringan untuk mempermudah operasional dan manajemen bisnis Anda.', 
+      title: 'NEXASERVER',
+      subtitle: 'SERVER & CLOUD',
+      desc: 'Pengelolaan web server, VPS, Data Center, dan sistem operasi jaringan (Linux/Windows Server) untuk perusahaan.', 
       img: "/nexaapp.png",
       colorClass: 'glass-icon-box-alt3'
     },
     { 
       id: 3,
-      title: 'NEXADESIGN',
-      subtitle: 'UI / UX DESIGN',
-      desc: 'Riset, wireframing, dan desain antarmuka yang estetis serta berpusat pada kenyamanan pengguna (User-Centric).', 
+      title: 'NEXAWEB',
+      subtitle: 'WEB & APP DEVELOPMENT',
+      desc: 'Pembuatan website company profile, e-commerce, hingga aplikasi sistem informasi untuk kebutuhan bisnis Anda.', 
       img: "/nexadesign.png",
       colorClass: 'glass-icon-box-alt1'
     },
     { 
       id: 4,
-      title: 'NEXABRAND',
-      subtitle: 'LOGO & VISUAL IDENTITY',
-      desc: 'Branding identity, logo, ilustrasi, dan materi pemasaran visual untuk memperkuat identitas brand perusahaan Anda.', 
+      title: 'NEXASECURE',
+      subtitle: 'CYBER SECURITY & CCTV',
+      desc: 'Pemasangan IP Camera, konfigurasi firewall, VPN, dan mitigasi keamanan jaringan untuk melindungi data Anda.', 
       img: "/nexabrand.png",
       colorClass: 'glass-icon-box-alt4'
     },
     { 
       id: 5,
-      title: 'NEXAMEDIA',
-      subtitle: 'POSTER / PAMPHLET',
-      desc: 'Layanan desain grafis untuk poster, pamflet, dan media promosi cetak maupun digital yang menarik.', 
+      title: 'NEXAIOT',
+      subtitle: 'IoT & TELECOM',
+      desc: 'Integrasi perangkat Internet of Things, instalasi VoIP, PABX, dan smart office system modern.', 
       img: "/nexamedia.png",
       colorClass: 'glass-icon-box-alt2'
     },
     { 
       id: 6,
-      title: 'NEXAPROFILE',
-      subtitle: 'COMPANY PROFILE',
-      desc: 'Pembuatan company profile profesional yang merepresentasikan nilai dan kredibilitas bisnis Anda di mata klien.', 
+      title: 'NEXASUPPORT',
+      subtitle: 'IT MAINTENANCE',
+      desc: 'Perawatan rutin perangkat keras, troubleshooting komputer, perbaikan server, dan dukungan teknis IT.', 
       img: "/nexaprofile.png",
       colorClass: 'glass-icon-box-alt1'
-    },
-    { 
-      id: 7,
-      title: 'NEXADIGITAL',
-      subtitle: 'DIGITAL MARKETING',
-      desc: 'Strategi pemasaran digital, SEO, dan manajemen kampanye online untuk meningkatkan konversi dan jangkauan audiens Anda.', 
-      img: "/nexadigital.png",
-      colorClass: 'glass-icon-box-alt3'
-    },
+    }
   ];
 
   return (

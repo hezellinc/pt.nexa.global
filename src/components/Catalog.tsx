@@ -9,137 +9,137 @@ import ScrollReveal from './ScrollReveal';
 import InteractiveIcon from './InteractiveIcon';
 
 const catalogData = {
-  NEXAWEB: [
+  NEXANET: [
     {
-      title: "Corporate Website (Company Profile)",
-      desc: "Website profesional untuk membangun kredibilitas dan representasi resmi perusahaan Anda di dunia digital. Cocok untuk B2B.",
-      icon: Briefcase,
+      title: "Instalasi Fiber Optic & LAN",
+      desc: "Penarikan kabel jaringan, terminasi FO, dan instalasi infrastruktur LAN untuk kantor atau instansi dengan standar rapi dan aman.",
+      icon: Layers,
       colorClass: "glass-icon-box"
     },
     {
-      title: "E-Commerce System",
-      desc: "Toko online canggih terintegrasi dengan payment gateway dan sistem manajemen pesanan cerdas.",
-      icon: ShoppingBag,
+      title: "Konfigurasi Router Mikrotik & Cisco",
+      desc: "Setting routing, manajemen bandwidth, load balancing, dan failover untuk menjamin koneksi internet perusahaan tetap stabil.",
+      icon: Globe,
       colorClass: "glass-icon-box-alt1"
     },
     {
-      title: "Custom Web Application",
-      desc: "Aplikasi berbasis web (SaaS) khusus untuk operasional bisnis, seperti portal e-learning, sistem manajemen data, atau forum.",
-      icon: Layout,
+      title: "Topologi & Desain Jaringan",
+      desc: "Perencanaan dan pembuatan topologi jaringan skala enterprise yang efisien, mudah dikelola, dan terukur (scalable).",
+      icon: PenTool,
       colorClass: "glass-icon-box-alt2"
     },
     {
-      title: "Landing Page Khusus (Campaign)",
-      desc: "Halaman tunggal yang didesain khusus dengan copywriting persuasif untuk memaksimalkan konversi iklan atau peluncuran produk.",
-      icon: Globe,
+      title: "Wireless Point-to-Point",
+      desc: "Distribusi jaringan nirkabel (wireless) jarak jauh untuk menghubungkan antar gedung atau kantor cabang tanpa kabel.",
+      icon: Share2,
       colorClass: "glass-icon-box-alt3"
     }
   ],
-  NEXAAPP: [
+  NEXASERVER: [
     {
-      title: "Smart POS (Point of Sale)",
-      desc: "Aplikasi kasir modern multi-cabang berbasis cloud untuk restoran, ritel, atau bisnis layanan dengan pencatatan otomatis.",
-      icon: Monitor,
+      title: "Setup Windows/Linux Server",
+      desc: "Instalasi sistem operasi server, active directory, file sharing, dan manajemen user untuk kebutuhan internal kantor.",
+      icon: Database,
       colorClass: "glass-icon-box-alt1"
     },
     {
-      title: "HR & Attendance System",
-      desc: "Sistem absensi dan manajemen karyawan terintegrasi dengan fitur geolokasi, pengajuan cuti, dan rekap penggajian.",
-      icon: Database,
+      title: "Cloud & Web Hosting",
+      desc: "Migrasi dan manajemen cloud server (AWS, Google Cloud, VPS) untuk memastikan aplikasi bisnis berjalan 24/7 tanpa henti.",
+      icon: Globe,
       colorClass: "glass-icon-box-alt4"
     },
     {
-      title: "Inventory & Warehouse App",
-      desc: "Aplikasi pelacakan stok barang secara real-time, manajemen pesanan, dan laporan keluar masuk gudang yang akurat.",
+      title: "Data Backup & Recovery",
+      desc: "Sistem pencadangan data otomatis (cloud/lokal) dan prosedur pemulihan bencana (Disaster Recovery) untuk mencegah kehilangan data.",
       icon: Layers,
       colorClass: "glass-icon-box-alt2"
     },
     {
-      title: "Mobile App Konsumen (Android/iOS)",
-      desc: "Pembuatan aplikasi mobile ringan untuk kemudahan interaksi langsung antara bisnis Anda dan konsumen setia.",
-      icon: Smartphone,
+      title: "Mail Server Perusahaan",
+      desc: "Pembuatan email domain khusus perusahaan (@perusahaan.com) yang aman, profesional, dan bebas spam.",
+      icon: Briefcase,
       colorClass: "glass-icon-box"
     }
   ],
-  NEXADESIGN: [
+  NEXAWEB: [
     {
-      title: "UI/UX Mobile App Design",
-      desc: "Riset dan perancangan antarmuka aplikasi seluler yang intuitif, nyaman, dan berpusat pada pengalaman pengguna (User-Centric).",
-      icon: Smartphone,
+      title: "Corporate Website Profile",
+      desc: "Pembuatan website profil perusahaan yang modern, responsif, dan SEO friendly untuk kredibilitas digital.",
+      icon: Monitor,
       colorClass: "glass-icon-box-alt3"
     },
     {
-      title: "Web Dashboard Interface",
-      desc: "Desain panel admin atau dashboard SaaS yang rapi, informatif, dan menyederhanakan data kompleks menjadi visual yang mudah dibaca.",
+      title: "Sistem Informasi Manajemen",
+      desc: "Pengembangan aplikasi berbasis web (SaaS) untuk administrasi, HRD, inventory, atau kebutuhan spesifik bisnis lainnya.",
       icon: Layout,
       colorClass: "glass-icon-box-alt1"
     },
     {
-      title: "Interactive Prototyping",
-      desc: "Pembuatan purwarupa (mockup) interaktif klik-tayang yang bisa diuji coba secara langsung sebelum proses programming dimulai.",
-      icon: PenTool,
+      title: "E-Commerce Integrasi Payment",
+      desc: "Toko online interaktif dengan keranjang belanja dan gateway pembayaran otomatis (transfer bank, e-wallet).",
+      icon: ShoppingBag,
       colorClass: "glass-icon-box-alt2"
     }
   ],
-  NEXABRAND: [
+  NEXASECURE: [
     {
-      title: "Corporate Logo Design",
-      desc: "Perancangan logo perusahaan berstandar internasional yang ikonik, bermakna, dan mampu merepresentasikan visi misi bisnis Anda.",
-      icon: PenTool,
+      title: "Instalasi IP Camera & CCTV",
+      desc: "Pemasangan sistem pengawasan CCTV resolusi tinggi yang dapat dipantau langsung dari smartphone kapan saja.",
+      icon: Search,
       colorClass: "glass-icon-box-alt4"
     },
     {
-      title: "Brand Guidelines (Brand Book)",
-      desc: "Buku pedoman identitas visual lengkap (palet warna, tipografi, aturan penggunaan logo) untuk menjaga konsistensi brand Anda.",
-      icon: BookOpen,
+      title: "Firewall & Keamanan Jaringan",
+      desc: "Implementasi sistem firewall (Fortinet, Mikrotik) untuk memblokir serangan siber, malware, dan akses tidak sah.",
+      icon: Database,
       colorClass: "glass-icon-box"
     },
     {
-      title: "Social Media Kit & Feed",
-      desc: "Desain template untuk media sosial (Instagram, LinkedIn) yang seragam dan profesional untuk kebutuhan posting rutin.",
+      title: "Setup VPN (Virtual Private Network)",
+      desc: "Koneksi jarak jauh yang aman (VPN) agar karyawan dapat mengakses data kantor dari rumah secara terenkripsi.",
       icon: Share2,
       colorClass: "glass-icon-box-alt1"
     },
     {
-      title: "Print & Media Banner",
-      desc: "Desain keperluan cetak seperti pamflet promosi, billboard, roll-up banner, atau company profile fisik eksklusif.",
-      icon: ImageIcon,
+      title: "Network Audit & Penetration Testing",
+      desc: "Evaluasi celah keamanan jaringan dan server, serta perbaikan sistem untuk mencegah kebocoran data.",
+      icon: Code,
       colorClass: "glass-icon-box-alt2"
     }
   ],
-  NEXADIGITAL: [
+  NEXAIOT: [
     {
-      title: "SEO Optimization",
-      desc: "Optimasi mesin pencari organik agar website perusahaan Anda selalu muncul di halaman pertama Google untuk kata kunci relevan.",
-      icon: Search,
+      title: "Smart Office & Automation",
+      desc: "Pemasangan perangkat pintar berbasis IoT seperti kontrol lampu, suhu, dan akses pintu secara otomatis.",
+      icon: Smartphone,
       colorClass: "glass-icon-box"
     },
     {
-      title: "Performance Ads (Meta & Google)",
-      desc: "Manajemen kampanye iklan berbayar secara presisi di Google Search, Instagram, dan Facebook untuk mendapatkan leads berkualitas.",
+      title: "PABX & IP PBX (Telepon Kantor)",
+      desc: "Instalasi sistem telepon internal kantor (PABX) untuk komunikasi antar divisi yang efisien dan hemat biaya.",
       icon: Megaphone,
       colorClass: "glass-icon-box-alt1"
     },
     {
-      title: "Social Media Management",
-      desc: "Pengelolaan akun media sosial perusahaan, mulai dari perencanaan konten, copywriting, hingga interaksi harian.",
-      icon: Share2,
+      title: "Sistem Absensi Biometrik",
+      desc: "Integrasi mesin sidik jari atau pengenalan wajah yang terhubung langsung ke server database perusahaan.",
+      icon: Monitor,
       colorClass: "glass-icon-box-alt3"
     },
     {
-      title: "Data Analytics & Reporting",
-      desc: "Penyusunan laporan konversi bulanan berbasis data (Google Analytics) untuk mengevaluasi dan merencanakan langkah pemasaran selanjutnya.",
-      icon: BarChart3,
+      title: "VoIP (Voice over IP)",
+      desc: "Solusi komunikasi suara jarak jauh melalui jaringan internet untuk menghemat tagihan telepon cabang bisnis Anda.",
+      icon: Globe,
       colorClass: "glass-icon-box-alt2"
     }
   ]
 };
 
 type Category = keyof typeof catalogData;
-const categories: Category[] = ["NEXAWEB", "NEXAAPP", "NEXADESIGN", "NEXABRAND", "NEXADIGITAL"];
+const categories: Category[] = ["NEXANET", "NEXASERVER", "NEXAWEB", "NEXASECURE", "NEXAIOT"];
 
 export default function Catalog() {
-  const [activeCategory, setActiveCategory] = useState<Category>("NEXAWEB");
+  const [activeCategory, setActiveCategory] = useState<Category>("NEXANET");
   const [isLoading, setIsLoading] = useState(false);
   const loadingTimeout = useRef<NodeJS.Timeout | null>(null);
 

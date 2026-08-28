@@ -1,10 +1,12 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Rocket, Home, Info, Layers, Settings, Tag, Activity, Users, Phone, HelpCircle, MessageSquare } from 'lucide-react';
+import { AlignRight, X, ChevronUp, ChevronDown, Rocket, Home, Info, Layers, Settings, Tag, Activity, Users, Phone, HelpCircle, MessageSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import InteractiveIcon from './InteractiveIcon';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
+  const ITEMS_PER_PAGE = 5;
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -55,7 +57,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 z-50 p-3 md:p-4 pointer-events-none">
-      <div className="max-w-6xl mx-auto glass-sm px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[color-mix(in_srgb,var(--bg-color)_90%,transparent)] backdrop-blur-md pointer-events-auto transition-colors duration-300">
+      <div className="max-w-6xl mx-auto glass-sm !rounded-full px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[color-mix(in_srgb,var(--bg-color)_90%,transparent)] backdrop-blur-md pointer-events-auto transition-colors duration-300">
         <div className="flex items-center gap-2 md:gap-3">
           <motion.div 
             whileHover={{ scale: 1.05 }} 
@@ -71,9 +73,9 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <button 
             className="p-2 glass-sm rounded-xl text-primary hover:text-white hover:bg-primary transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => { setIsOpen(!isOpen); setStartIndex(0); }}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} /> : <AlignRight size={24} />}
           </button>
         </div>
       </div>
@@ -89,7 +91,15 @@ export default function Navbar() {
             className="absolute top-20 left-4 right-4 md:left-auto md:right-4 md:w-96 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-hide glass p-6 flex flex-col gap-2 bg-[color-mix(in_srgb,var(--bg-color)_95%,transparent)] backdrop-blur-xl origin-top-right pointer-events-auto transition-colors duration-300"
           >
             <div className="grid grid-cols-1 gap-2">
-              {navLinks.map((link, index) => (
+              {startIndex > 0 && (
+                <button 
+                  onClick={() => setStartIndex(Math.max(0, startIndex - ITEMS_PER_PAGE))}
+                  className="w-full py-2 flex items-center justify-center text-text/50 hover:text-primary transition-colors glass-sm rounded-xl mb-1"
+                >
+                  <ChevronUp size={24} />
+                </button>
+              )}
+              {navLinks.slice(startIndex, startIndex + ITEMS_PER_PAGE).map((link, index) => (
                 <motion.a 
                   key={link.name} 
                   href={link.href}
@@ -107,6 +117,14 @@ export default function Navbar() {
                   </span>
                 </motion.a>
               ))}
+              {startIndex + ITEMS_PER_PAGE < navLinks.length && (
+                <button 
+                  onClick={() => setStartIndex(Math.min(navLinks.length - ITEMS_PER_PAGE, startIndex + ITEMS_PER_PAGE))}
+                  className="w-full py-2 flex items-center justify-center text-text/50 hover:text-primary transition-colors glass-sm rounded-xl mt-1"
+                >
+                  <ChevronDown size={24} />
+                </button>
+              )}
             </div>
             
             <motion.a 

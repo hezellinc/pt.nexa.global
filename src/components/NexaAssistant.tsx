@@ -1,54 +1,75 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, X, Send, Bot, User, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2, Trash2, Check } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const SYSTEM_PROMPT = `Anda adalah Nexa Assistant, konsultan AI resmi untuk PT. NexaTech Solutions.
-Tugas Anda adalah membantu klien (fokus pada korporasi dan B2B PT Teknologi Digital) memahami layanan IT, IoT, AI Software, dan transformasi digital kami.
+Tugas Anda adalah membantu klien (fokus pada instansi, korporasi, dan perusahaan B2B) memahami layanan TJKT (Teknik Jaringan Komputer dan Telekomunikasi), Server, Keamanan Siber, dan infrastruktur IT kami.
 Gunakan format **Markdown** untuk setiap jawaban Anda agar rapi, terstruktur, dan mudah dibaca (gunakan bullet points, bold, list, atau heading jika perlu). 
 
 INFORMASI PERUSAHAAN (PT. NexaTech Solutions):
-- **Visi Kami**: Menjadi mitra transformasi digital terdepan yang memberdayakan ekosistem bisnis global melalui inovasi teknologi cerdas, adaptif, dan berkelanjutan.
-- **Misi Kami**: (1) Menghadirkan solusi pengembangan Web, Aplikasi & Desain UI/UX dengan standar enterprise, (2) Mengoptimalkan konversi bisnis melalui Digital Marketing & Branding, (3) Membangun kolaborasi jangka panjang berdasarkan profesionalisme.
+- **Fokus Utama**: Menjadi penyedia solusi Infrastruktur Jaringan (TJKT) dan sistem IT Enterprise yang andal dan terukur.
 - **Lokasi Kantor**: Chinatown, Singapore.
 - **Kontak**: Email (nexatech@yahoo.com), Telepon/WA (+62 877-9872-5167).
 
 LAYANAN KAMI:
-1. **NEXAWEB (Website Creation)**: Pembuatan infrastruktur website enterprise, e-commerce, hingga web-apps interaktif dengan performa tinggi.
-2. **NEXAAPP (Simple Application)**: Pengembangan aplikasi web dan mobile ringan untuk mempermudah operasional dan manajemen bisnis.
-3. **NEXADESIGN (UI / UX Design)**: Riset dan desain antarmuka B2B yang estetis serta berpusat pada kenyamanan pengguna.
-4. **NEXABRAND (Logo & Visual Identity)**: Branding identity untuk memperkuat posisi perusahaan klien di pasar.
-5. **NEXAMEDIA (Poster / Pamphlet)**: Layanan desain grafis untuk poster, pamflet, dan media promosi cetak maupun digital.
-6. **NEXAPROFILE (Company Profile)**: Pembuatan company profile profesional yang merepresentasikan kredibilitas bisnis Anda.
-7. **NEXADIGITAL (Digital Marketing)**: Strategi pemasaran digital, SEO, dan manajemen kampanye online untuk meningkatkan konversi.
+1. **NEXANET**: Infrastruktur Jaringan (Instalasi Fiber Optic, LAN, WAN, Konfigurasi Router/Switch Mikrotik & Cisco).
+2. **NEXASERVER**: Manajemen Server & Cloud (Setup Windows/Linux Server, VPS, AWS/Google Cloud, Data Center).
+3. **NEXAWEB**: Pengembangan Sistem Informasi & Web App (Terintegrasi dengan server lokal perusahaan, E-Commerce, Profile).
+4. **NEXASECURE**: Keamanan Siber & CCTV (Instalasi IP Camera, Firewall Fortinet/Mikrotik, setup VPN).
+5. **NEXAIOT**: Solusi IoT & Telekomunikasi (Smart Office, VoIP, Mesin Absensi Biometrik, PABX).
+6. **NEXASUPPORT**: Layanan IT Maintenance bulanan/tahunan (Dukungan teknis hardware dan jaringan).
 
-TIM KAMI (Pakar Kreatif & Teknis):
+TIM KAMI (Engineer & Teknisi):
 - **Muhammad Zyldan Muzhaffar**: CEO
-- **Muhammad Fariz Alfauzi**: Marketing & Dev
+- **Muhammad Fariz Alfauzi**: Network Engineer & Dev
 - **Zulpa Apriliani**: Keuangan
 - **Annas Nasri**: Keuangan
-- **Dimas Alvino**: Marketing
-- **Reihan Alvin**: Desainer
-- **Wolid Herdiansyah**: Desainer
+- **Dimas Alvino**: System Administrator
+- **Reihan Alvin**: IT Support
+- **Wolid Herdiansyah**: Technical Support
 
 PANDUAN MENJAWAB:
-1. Selalu bersikap profesional, ramah, dan sangat berpengetahuan dalam bidang marketing B2B, teknologi, serta finansial.
-2. Arahkan korporasi/klien pada layanan yang paling tepat dari NexaTech sesuai kebutuhan efisiensi mereka.
-3. Selalu gunakan format **Markdown** agar tulisan rapi. Jika klien bertanya tentang tim, lokasi, atau layanan, berikan jawaban berdasarkan data di atas.`;
+1. Selalu bersikap profesional, ramah, dan sangat berpengetahuan dalam bidang TJKT, Jaringan, Hardware, dan infrastruktur IT.
+2. Arahkan klien pada layanan infrastruktur dan TJKT yang paling tepat dari NexaTech sesuai kebutuhan efisiensi mereka. Jika mereka bertanya tentang web, sampaikan bahwa kita punya layanan NEXAWEB.
+3. Selalu gunakan format **Markdown** agar tulisan rapi.`;
 
 interface Message {
   role: 'user' | 'assistant' | 'system';
   content: string;
 }
 
+const DEFAULT_MESSAGE: Message = { role: 'assistant', content: 'Halo! Saya Nexa Assistant. Ada yang bisa saya bantu terkait layanan IT, IoT, atau AI di NexaTech Solutions?' };
+
 export default function NexaAssistant() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'Halo! Saya Nexa Assistant. Ada yang bisa saya bantu terkait layanan IT, IoT, atau AI di NexaTech Solutions?' }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([DEFAULT_MESSAGE]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('nexa_chat_history');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setMessages(parsed);
+        }
+      } catch (e) {
+        console.error("Gagal memuat history chat:", e);
+      }
+    }
+    setIsInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem('nexa_chat_history', JSON.stringify(messages));
+    }
+  }, [messages, isInitialized]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -56,7 +77,12 @@ export default function NexaAssistant() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isLoading]);
+  }, [messages, isLoading, isOpen]);
+
+  const handleClearHistory = () => {
+    setMessages([DEFAULT_MESSAGE]);
+    setShowClearConfirm(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -122,12 +148,29 @@ export default function NexaAssistant() {
                   </div>
                 </div>
               </div>
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-text"
-              >
-                <X size={20} />
-              </button>
+              <div className="flex items-center gap-2">
+                {showClearConfirm ? (
+                  <div className="flex items-center gap-1 bg-red-500/20 text-red-400 px-2 py-1.5 rounded-lg border border-red-500/30">
+                    <span className="text-xs font-semibold mr-1">Hapus?</span>
+                    <button onClick={handleClearHistory} className="p-1 hover:bg-red-500/30 rounded-md transition-colors"><Check size={14} /></button>
+                    <button onClick={() => setShowClearConfirm(false)} className="p-1 hover:bg-red-500/30 rounded-md transition-colors"><X size={14} /></button>
+                  </div>
+                ) : (
+                  <button 
+                    onClick={() => setShowClearConfirm(true)}
+                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-text/70 hover:text-red-400"
+                    title="Hapus History"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-text"
+                >
+                  <X size={20} />
+                </button>
+              </div>
             </div>
 
             {/* Chat Area */}
@@ -140,7 +183,7 @@ export default function NexaAssistant() {
                   <div className={`max-w-[85%] p-4 rounded-3xl ${
                     msg.role === 'user' 
                       ? 'glass-btn text-white rounded-br-sm' 
-                      : 'glass-sm bg-[var(--glass-bg)] text-text rounded-bl-sm'
+                      : 'bg-[#2A2A35] border border-white/10 text-text rounded-bl-sm shadow-md'
                   }`}>
                     {msg.role === 'assistant' && (
                       <div className="flex items-center gap-2 mb-2 opacity-80 border-b border-white/10 pb-2">
@@ -159,7 +202,7 @@ export default function NexaAssistant() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="glass-sm bg-[var(--glass-bg)] text-text rounded-3xl rounded-bl-sm p-4 flex items-center gap-3">
+                  <div className="bg-[#2A2A35] border border-white/10 text-text rounded-3xl rounded-bl-sm p-4 flex items-center gap-3 shadow-md">
                     <Loader2 size={16} className="animate-spin text-primary" />
                     <span className="text-sm font-semibold opacity-80">Mengetik balasan...</span>
                   </div>

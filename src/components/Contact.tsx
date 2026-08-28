@@ -5,16 +5,16 @@ import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 
 const services = [
-  "Website Landing Page",
-  "Website E-Commerce",
-  "Custom Web Application",
-  "UI/UX Design",
-  "Mobile App Development",
-  "SEO & Digital Marketing",
-  "Social Media Management",
-  "Brand Identity & Logo",
-  "Cloud & Hosting Setup",
-  "IT Consulting",
+  "Instalasi Jaringan (LAN/FO)",
+  "Konfigurasi Router/Switch",
+  "Manajemen Server & Data Center",
+  "Cloud & Web Hosting",
+  "Pemasangan IP Camera / CCTV",
+  "Instalasi Smart Office (IoT)",
+  "Setup VPN & Keamanan Jaringan",
+  "Instalasi PABX / VoIP",
+  "Pembuatan Web / Sistem Informasi",
+  "IT Maintenance (Kontrak Bulanan)",
   "Lainnya"
 ];
 

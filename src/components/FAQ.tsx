@@ -6,28 +6,28 @@ import ScrollReveal from './ScrollReveal';
 
 const faqs = [
   {
-    question: "Apa saja layanan IT yang ditawarkan oleh NexaTech Solutions?",
-    answer: "Kami menawarkan layanan end-to-end mulai dari strategi digital marketing, desain UI/UX, pengembangan website (company profile, e-commerce, custom web apps), pembuatan aplikasi mobile (Android & iOS), hingga integrasi payment gateway dan cloud hosting."
+    question: "Apa saja layanan utama NexaTech di bidang TJKT?",
+    answer: "Kami melayani instalasi infrastruktur jaringan (LAN, WAN, Fiber Optic), konfigurasi router/switch (Mikrotik, Cisco), instalasi CCTV & IP Camera, setup perangkat IoT (Smart Office), serta manajemen server dan cloud hosting (VPS, AWS, Google Cloud)."
   },
   {
-    question: "Berapa lama waktu yang dibutuhkan untuk pembuatan website?",
-    answer: "Waktu pengerjaan sangat bergantung pada kompleksitas proyek. Untuk website landing page standar biasanya memakan waktu 1-2 minggu, sementara untuk sistem e-commerce atau aplikasi custom bisa memakan waktu 1-3 bulan. Kami akan memberikan estimasi waktu yang akurat setelah memahami kebutuhan detail Anda."
+    question: "Apakah NexaTech juga menerima pembuatan website atau aplikasi?",
+    answer: "Ya, meskipun fokus kami adalah infrastruktur IT (TJKT), kami memiliki tim developer berpengalaman untuk membangun Sistem Informasi Manajemen, Web Company Profile, hingga aplikasi E-Commerce yang terintegrasi langsung dengan server lokal Anda."
   },
   {
-    question: "Apakah layanan pembuatan website sudah termasuk domain dan hosting?",
-    answer: "Ya, sebagian besar paket layanan kami (seperti Starter dan Professional) sudah termasuk domain (.com/.co.id) dan cloud hosting gratis untuk 1 tahun pertama. Anda tidak perlu repot mengurus hal teknis tersebut."
+    question: "Apakah perusahaan harus beli perangkat (hardware) sendiri?",
+    answer: "Tidak perlu. Kami melayani skema End-to-End di mana kami yang akan merancang Bill of Quantities (BoQ) dan menyediakan seluruh hardware (Server, Router, Kabel, CCTV) dengan harga distributor resmi."
   },
   {
-    question: "Apakah saya bisa request custom fitur yang tidak ada di paket?",
-    answer: "Tentu saja! Kami sangat terbuka untuk pengembangan fitur custom sesuai dengan proses bisnis Anda. Silakan pilih paket Enterprise atau diskusikan kebutuhan Anda secara spesifik dengan tim kami untuk mendapatkan penawaran yang sesuai."
+    question: "Bagaimana dengan jaminan atau garansi instalasi jaringan?",
+    answer: "Kami memberikan garansi fisik instalasi dan SLA uptime jaringan sesuai paket yang dipilih (umumnya 1 hingga 6 bulan pertama). Jika ada kendala, tim dukungan teknis kami siap melakukan remote troubleshooting atau kunjungan fisik."
   },
   {
-    question: "Bagaimana sistem pembayaran untuk proyek pengembangan?",
-    answer: "Sistem pembayaran kami umumnya dibagi menjadi 2-3 tahap: DP (Down Payment) sebesar 40-50% sebelum proyek dimulai, dan pelunasan setelah proyek selesai (UAT/Go-Live). Untuk proyek skala besar, termin pembayaran bisa disesuaikan dengan kesepakatan bersama."
+    question: "Apakah bisa melayani instalasi jaringan untuk proyek luar kota?",
+    answer: "Sangat bisa. Engineer kami siap diberangkatkan ke berbagai kota di Indonesia untuk tahap Site Survey hingga instalasi, terutama untuk proyek menengah ke atas seperti pabrik, kampus, atau gedung perkantoran."
   },
   {
-    question: "Apakah ada layanan maintenance (pemeliharaan) setelah aplikasi selesai?",
-    answer: "Ya, kami memberikan garansi dan dukungan teknis (maintenance) gratis selama 1-12 bulan tergantung paket yang Anda pilih. Setelah masa garansi habis, kami juga menawarkan kontrak maintenance tahunan atau bulanan."
+    question: "Apakah ada layanan IT Maintenance berkala?",
+    answer: "Ya, kami menyediakan paket NEXASUPPORT berupa kontrak pemeliharaan IT bulanan atau tahunan. Layanan ini mencakup perbaikan jaringan, backup server, pembersihan hardware, dan optimasi keamanan siber perusahaan."
   }
 ];
 

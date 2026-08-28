@@ -4,110 +4,110 @@ import { X, CheckCircle2, ArrowRight, Layout, Globe, Smartphone, PenTool, Megaph
 import InteractiveIcon from './InteractiveIcon';
 
 const serviceDetailsData: Record<string, any> = {
-  NEXAWEB: {
-    title: 'Pengembangan Website Enterprise',
-    subtitle: 'NEXAWEB',
+  NEXANET: {
+    title: 'Infrastruktur Jaringan Terintegrasi',
+    subtitle: 'NEXANET',
     icon: Globe,
     colorClass: 'glass-icon-box-alt2',
-    description: 'Kami merancang dan mengembangkan solusi website kustom berkinerja tinggi, mulai dari company profile elegan, portal B2B, hingga sistem e-commerce kompleks yang siap menangani ribuan transaksi per detik.',
+    description: 'Solusi lengkap instalasi dan manajemen jaringan mulai dari penarikan Fiber Optic, konfigurasi LAN/WAN, hingga manajemen lalu lintas data menggunakan router kelas enterprise (Mikrotik/Cisco).',
     benefits: [
-      'Performa Pemuatan Super Cepat (Optimasi Core Web Vitals)',
-      'Desain Responsif Sempurna di Semua Perangkat',
-      'Keamanan Tingkat Lanjut (Anti-DDoS & Enkripsi Data)',
-      'Struktur SEO Friendly Bawaan'
+      'Koneksi Internet Stabil dan Terdistribusi Merata',
+      'Manajemen Bandwidth Presisi per Divisi/User',
+      'Minim Downtime dengan Sistem Failover',
+      'Kerapian dan Standar Keamanan Kabel Tingkat Tinggi'
     ],
     process: [
-      { name: 'Analisis Kebutuhan', desc: 'Memahami visi, target audiens, dan fitur yang dibutuhkan bisnis Anda.' },
-      { name: 'Wireframing & UI/UX', desc: 'Pembuatan kerangka visual dan purwarupa interaktif.' },
-      { name: 'Pengembangan (Coding)', desc: 'Penulisan kode menggunakan teknologi modern (React, Node.js).' },
-      { name: 'QA & Pengujian', desc: 'Uji fungsionalitas, keamanan, dan kompatibilitas peramban.' },
-      { name: 'Peluncuran', desc: 'Penyebaran ke server produksi dan pemantauan awal.' }
+      { name: 'Site Survey', desc: 'Survei lokasi fisik untuk menentukan jalur kabel dan titik akses.' },
+      { name: 'Topologi', desc: 'Pembuatan desain jaringan dan estimasi perangkat (BoQ).' },
+      { name: 'Instalasi Fisik', desc: 'Penarikan kabel FO/UTP dan pemasangan rack server.' },
+      { name: 'Konfigurasi', desc: 'Setting Mikrotik, Cisco, Access Point, dan VLAN.' },
+      { name: 'Testing', desc: 'Uji beban, ping test, dan serah terima dokumen jaringan.' }
     ],
-    caseStudy: 'Revamp E-Commerce Retail Lokal meningkatkan kecepatan muat sebesar 60% dan mendorong peningkatan penjualan organik sebesar 150% dalam kuartal pertama.'
+    caseStudy: 'Instalasi jaringan Fiber Optic di area pabrik seluas 5 hektar mengeliminasi masalah dead zone dan menstabilkan sistem ERP antar gudang.'
   },
-  NEXADESIGN: {
-    title: 'Desain UI/UX & Interaksi',
-    subtitle: 'NEXADESIGN',
+  NEXASERVER: {
+    title: 'Manajemen Server & Cloud',
+    subtitle: 'NEXASERVER',
     icon: Layout,
     colorClass: 'glass-icon-box-alt1',
-    description: 'Menciptakan antarmuka digital yang tidak hanya memukau secara visual, tetapi juga sangat intuitif. Kami berfokus pada User-Centered Design (UCD) untuk memastikan setiap klik memiliki tujuan yang jelas.',
+    description: 'Layanan administrasi server komprehensif, mencakup setup server fisik (Data Center lokal) maupun cloud (AWS, Google Cloud, VPS) untuk memastikan aplikasi dan data perusahaan berjalan lancar.',
     benefits: [
-      'Peningkatan Tingkat Retensi Pengguna',
-      'Penurunan Bounce Rate',
-      'Sistem Desain (Design System) Konsisten',
-      'Aksesibilitas Sesuai Standar Global (WCAG)'
+      'Kinerja Aplikasi Bisnis Cepat dan Tanpa Henti',
+      'Sistem Pencadangan (Backup) Data Otomatis',
+      'Keamanan Tingkat Server (Hardening OS)',
+      'Manajemen Pengguna terpusat via Active Directory'
     ],
     process: [
-      { name: 'Riset Pengguna', desc: 'Wawancara dan analisis perilaku target audiens.' },
-      { name: 'Arsitektur Informasi', desc: 'Menyusun struktur navigasi dan hierarki konten.' },
-      { name: 'Desain Visual', desc: 'Penerapan warna, tipografi, dan gaya visual (seperti Claymorphism).' },
-      { name: 'Prototyping', desc: 'Pembuatan purwarupa yang dapat diklik untuk uji coba.' },
-      { name: 'Handoff Developer', desc: 'Penyerahan aset dan dokumentasi desain ke tim pengembang.' }
+      { name: 'Asesmen Beban', desc: 'Menghitung kebutuhan spesifikasi RAM, CPU, dan Storage.' },
+      { name: 'Setup OS', desc: 'Instalasi Linux (Ubuntu/CentOS) atau Windows Server.' },
+      { name: 'Konfigurasi', desc: 'Setting Web Server, Database, dan File Sharing.' },
+      { name: 'Keamanan', desc: 'Implementasi aturan Firewall dasar dan SSL.' },
+      { name: 'Monitoring', desc: 'Pemantauan resource server 24/7 (Zabbix/Prometheus).' }
     ],
-    caseStudy: 'Desain ulang dashboard SaaS B2B berhasil mengurangi waktu penyelesaian tugas pengguna hingga 40% dan menekan tiket keluhan pelanggan secara drastis.'
+    caseStudy: 'Migrasi sistem on-premise ke Cloud AWS berhasil mengurangi biaya operasional hardware hingga 40% dengan uptime mencapai 99.99%.'
   },
-  NEXAAPP: {
-    title: 'Aplikasi Mobile & Web Sederhana',
-    subtitle: 'NEXAAPP',
+  NEXAWEB: {
+    title: 'Pengembangan Aplikasi Web & Sistem',
+    subtitle: 'NEXAWEB',
     icon: Smartphone,
     colorClass: 'glass-icon-box-alt3',
-    description: 'Solusi perangkat lunak cerdas untuk memecahkan masalah spesifik operasional bisnis Anda. Dari aplikasi kasir (POS), absensi pintar, hingga sistem manajemen inventaris.',
+    description: 'Kami tidak hanya ahli di bidang hardware, tetapi juga mampu membangun perangkat lunak (Software) seperti Sistem Informasi Manajemen, ERP custom, dan Website Company Profile profesional.',
     benefits: [
-      'Otomatisasi Proses Manual',
-      'Manajemen Data Tersentralisasi',
-      'Integrasi API Pihak Ketiga',
-      'Antarmuka Ramah Pengguna untuk Staf'
+      'Digitalisasi Proses Bisnis (Paperless)',
+      'Akses Data Kapan Saja via Web Browser',
+      'Integrasi Langsung ke Database Server Lokal',
+      'Antarmuka Responsif (Mobile & Desktop)'
     ],
     process: [
-      { name: 'Pemetaan Proses Bisnis', desc: 'Identifikasi alur kerja yang akan didigitalkan.' },
-      { name: 'Desain Database', desc: 'Perancangan skema data yang aman dan efisien.' },
-      { name: 'Pembuatan MVP', desc: 'Pengembangan Minimum Viable Product untuk pengujian awal.' },
-      { name: 'Iterasi & Umpan Balik', desc: 'Penyempurnaan berdasarkan masukan pengguna lapangan.' },
-      { name: 'Implementasi Skala Penuh', desc: 'Pelatihan staf dan migrasi data sepenuhnya.' }
+      { name: 'Analisis Kebutuhan', desc: 'Wawancara kebutuhan alur kerja sistem.' },
+      { name: 'Desain UI/UX', desc: 'Membuat tampilan antarmuka (mockup).' },
+      { name: 'Coding', desc: 'Pengembangan backend dan frontend sistem.' },
+      { name: 'Testing', desc: 'Uji fungsionalitas dan keamanan dari bug.' },
+      { name: 'Deployment', desc: 'Pemasangan aplikasi ke server (VPS/Cloud) klien.' }
     ],
-    caseStudy: 'Implementasi Smart HR Absensi di perusahaan manufaktur menghemat 15 jam kerja divisi HR setiap bulannya dalam merekap gaji.'
+    caseStudy: 'Pengembangan aplikasi Smart Inventory mengotomatisasi pencatatan stok dari 3 cabang gudang ke satu server pusat secara real-time.'
   },
-  NEXABRAND: {
-    title: 'Identitas Merek & Desain Grafis',
-    subtitle: 'NEXABRAND',
+  NEXASECURE: {
+    title: 'Keamanan Siber & Instalasi CCTV',
+    subtitle: 'NEXASECURE',
     icon: PenTool,
     colorClass: 'glass-icon-box-alt4',
-    description: 'Kami membantu menerjemahkan nilai, misi, dan visi perusahaan Anda menjadi identitas visual yang kuat, ikonik, dan mudah diingat oleh konsumen di pasar yang kompetitif.',
+    description: 'Lindungi aset fisik dan digital perusahaan Anda. Kami melayani instalasi sistem pengawasan kamera keamanan (CCTV IP Camera) serta proteksi jaringan dari serangan siber menggunakan Firewall.',
     benefits: [
-      'Kesan Pertama yang Profesional & Kredibel',
-      'Konsistensi Brand di Seluruh Platform',
-      'Panduan Brand (Brand Guidelines) Lengkap',
-      'Aset Visual Siap Cetak & Digital'
+      'Pemantauan Keamanan Fisik 24 Jam via Smartphone',
+      'Pencegahan Akses Ilegal (Hacking) ke Data Perusahaan',
+      'Koneksi Jarak Jauh Aman Menggunakan VPN',
+      'Penyimpanan Rekaman Kamera Resolusi Tinggi yang Lama'
     ],
     process: [
-      { name: 'Brand Discovery', desc: 'Workshop untuk menggali inti dan nilai merek Anda.' },
-      { name: 'Moodboarding', desc: 'Eksplorasi arah visual, warna, dan tipografi.' },
-      { name: 'Desain Logo', desc: 'Pembuatan sketsa dan digitalisasi logo utama.' },
-      { name: 'Ekspansi Visual', desc: 'Penerapan logo pada kartu nama, kop surat, dan media sosial.' },
-      { name: 'Penyusunan Pedoman', desc: 'Pembuatan buku pedoman identitas merek.' }
+      { name: 'Audit Keamanan', desc: 'Mencari celah keamanan di sistem saat ini.' },
+      { name: 'Perancangan', desc: 'Menentukan titik CCTV dan skema keamanan Firewall.' },
+      { name: 'Instalasi', desc: 'Pemasangan IP Camera, NVR, dan hardware Firewall.' },
+      { name: 'Konfigurasi', desc: 'Setting rules, port blocking, VPN, dan resolusi kamera.' },
+      { name: 'Handover', desc: 'Pelatihan staf sekuriti dan IT internal.' }
     ],
-    caseStudy: 'Rebranding waralaba FnB nasional menghasilkan persepsi merek yang lebih modern, menarik demografi Gen-Z dan menaikkan pangsa pasar sebesar 25%.'
+    caseStudy: 'Implementasi VPN dan Fortinet Firewall mengamankan pertukaran data konfidensial bagi karyawan yang bekerja dari rumah (WFH).'
   },
-  NEXADIGITAL: {
-    title: 'Pemasaran Digital & SEO',
-    subtitle: 'NEXADIGITAL',
+  NEXAIOT: {
+    title: 'Solusi IoT & Telekomunikasi Kantor',
+    subtitle: 'NEXAIOT',
     icon: Megaphone,
     colorClass: 'glass-icon-box',
-    description: 'Tingkatkan visibilitas online Anda melalui strategi pemasaran berbasis data. Kami menggabungkan optimasi organik (SEO) dan kampanye iklan berbayar yang presisi (Performance Ads).',
+    description: 'Modernisasi lingkungan kerja Anda dengan perangkat cerdas Internet of Things (IoT) dan sistem komunikasi terpadu seperti PABX, VoIP, dan Mesin Absensi Biometrik.',
     benefits: [
-      'Peningkatan Traffic Organik & Berkualitas',
-      'ROI Iklan (ROAS) yang Terukur',
-      'Dominasi Kata Kunci Industri di Google',
-      'Laporan Analitik Komprehensif'
+      'Efisiensi Energi (Lampu/AC Otomatis Cerdas)',
+      'Komunikasi Antar Divisi Gratis (PABX/VoIP)',
+      'Otomatisasi Sistem Presensi Karyawan',
+      'Kontrol Terpusat melalui Dashboard'
     ],
     process: [
-      { name: 'Audit Digital', desc: 'Evaluasi kinerja website dan media sosial saat ini.' },
-      { name: 'Riset Kata Kunci', desc: 'Menemukan peluang pencarian dengan niat beli tinggi.' },
-      { name: 'Strategi Konten & Iklan', desc: 'Pembuatan rencana kampanye multi-saluran.' },
-      { name: 'Eksekusi Kampanye', desc: 'Optimasi on-page SEO dan peluncuran iklan Meta/Google.' },
-      { name: 'Analisis & Optimasi', desc: 'Pemantauan hasil bulanan dan penyesuaian strategi.' }
+      { name: 'Identifikasi Alat', desc: 'Memilih sensor dan alat yang sesuai kebutuhan.' },
+      { name: 'Pemasangan Fisik', desc: 'Instalasi sensor IoT, telepon IP, dan mesin absensi.' },
+      { name: 'Integrasi Sistem', desc: 'Menghubungkan alat dengan server dan software.' },
+      { name: 'Kalibrasi', desc: 'Penyesuaian akurasi sensor dan pengujian suara VoIP.' },
+      { name: 'Go Live', desc: 'Sistem aktif digunakan dalam operasional sehari-hari.' }
     ],
-    caseStudy: 'Kampanye SEO komprehensif untuk klien properti menghasilkan peningkatan lead kualifikasi sebesar 300% dengan biaya akuisisi (CPA) yang lebih rendah 40%.'
+    caseStudy: 'Sistem IP PBX (VoIP) untuk perusahaan multi-cabang memangkas tagihan telepon bulanan hingga 65%.'
   }
 };
 

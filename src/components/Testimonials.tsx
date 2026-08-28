@@ -20,62 +20,62 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: 'Budi Perkasa',
-    role: 'Chief Executive Officer',
-    company: 'PT Solusi Teknologi Asia',
+    role: 'IT Director',
+    company: 'PT Solusi Manufaktur Nusantara',
     avatar: 'BP',
     avatarColor: 'bg-primary/20 text-primary border-primary/30',
     rating: 5,
-    service: 'NEXAWEB & NEXAAPP',
-    comment: 'Implementasi infrastruktur cloud dan portal web enterprise dari NexaTech meningkatkan efisiensi operasional tim kami hingga 40%. Desain glassmorphism-nya sangat bersih, modern, dan memberikan impresi sangat profesional kepada mitra bisnis kami.',
-    impactMetric: 'Efisiensi Operasional +40%'
+    service: 'NEXANET & NEXASERVER',
+    comment: 'Instalasi topologi Fiber Optic dan migrasi server lokal yang dilakukan tim NexaTech sangat luar biasa. Masalah jaringan terputus antar pabrik kini teratasi sepenuhnya dengan uptime 99.9%.',
+    impactMetric: 'Uptime Jaringan 99.9%'
   },
   {
     id: 2,
     name: 'Amanda Kirana',
-    role: 'Head of Product',
-    company: 'FinTech Nusantara',
+    role: 'Head of Operations',
+    company: 'Logistics Smart System',
     avatar: 'AK',
     avatarColor: 'bg-secondary/20 text-secondary border-secondary/30',
     rating: 5,
-    service: 'NEXADESIGN & NEXABRAND',
-    comment: 'Riset UI/UX dan sistem identitas visual yang dibuat oleh tim NexaTech sungguh luar biasa. Pengguna platform kami memberikan respons sangat positif atas kemudahan navigasi dan estetika antarmuka yang ramah pengguna.',
-    impactMetric: 'User Engagement +65%'
+    service: 'NEXASECURE',
+    comment: 'Pemasangan IP Camera resolusi 4K dan konfigurasi firewall Fortinet memberikan kami kendali penuh atas keamanan gudang. Sistem pemantauan terpusatnya bekerja tanpa cacat.',
+    impactMetric: 'Keamanan Data & Aset'
   },
   {
     id: 3,
     name: 'Dr. Hendra Wijaya',
-    role: 'Director of Operations',
-    company: 'Medika Digital Enterprise',
+    role: 'Direktur Utama',
+    company: 'RS Medika Sejahtera',
     avatar: 'HW',
     avatarColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
     rating: 5,
-    service: 'NEXAPROFILE & NEXADIGITAL',
-    comment: 'Profil perusahaan interaktif dan strategi kampanye pemasaran digital dari NexaTech membantu kami menarik minat klien korporat dengan tingkat konversi penjualan meningkat 2.5x lipat dalam kurun waktu 3 bulan saja.',
-    impactMetric: 'Konversi Penjualan 2.5x'
+    service: 'NEXAWEB & NEXASERVER',
+    comment: 'Sistem Informasi Rumah Sakit yang dibangun dan dihosting di server on-premise kami berjalan sangat cepat. Keamanan rekam medis pasien terjamin, dan proses antrean menjadi sangat efisien.',
+    impactMetric: 'Efisiensi Antrean +60%'
   },
   {
     id: 4,
     name: 'Siti Rahmawati',
-    role: 'Co-Founder & VP Growth',
-    company: 'EduTech Indonesia',
+    role: 'General Manager',
+    company: 'EduTech Campus',
     avatar: 'SR',
     avatarColor: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
     rating: 5,
-    service: 'NEXAAPP & NEXADESIGN',
-    comment: 'Proses pengerjaan aplikasi web berlangsung cepat dan tepat waktu. Komunikasi tim sangat transparan, sistematis, dan hasil akhirnya melampaui ekspektasi. Sangat merekomendasikan NexaTech bagi bisnis yang ingin berkembang!',
-    impactMetric: 'Rilis On-Time 100%'
+    service: 'NEXAIOT & NEXANET',
+    comment: 'Implementasi PABX/VoIP dan instalasi jaringan Wi-Fi di seluruh area kampus berlangsung rapi dan profesional. Tagihan komunikasi antar departemen kami turun drastis!',
+    impactMetric: 'Hemat Biaya Telp 65%'
   },
   {
     id: 5,
     name: 'Kevin Tanujaya',
-    role: 'Managing Director',
-    company: 'Logistics Smart System',
+    role: 'CEO',
+    company: 'Bintang Retail Group',
     avatar: 'KT',
     avatarColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
     rating: 5,
-    service: 'NEXAWEB & ANALYTICS',
-    comment: 'Dashboard analitik interaktif yang dibangun NexaTech memberikan wawasan real-time yang sangat berharga bagi keputusan bisnis strategis perusahaan kami. Solusi B2B terbaik yang pernah kami gunakan.',
-    impactMetric: 'Keputusan Bisnis Real-time'
+    service: 'NEXASUPPORT',
+    comment: 'Berkat kontrak IT Maintenance bulanan, kami tidak perlu lagi repot mengurus masalah hardware atau perbaikan server. Respon tim teknis sangat cepat saat terjadi kendala operasional.',
+    impactMetric: 'SLA Respon < 2 Jam'
   }
 ];
 

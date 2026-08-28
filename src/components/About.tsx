@@ -49,7 +49,7 @@ export default function About() {
                   Visi Perusahaan
                 </h3>
                 <p className="opacity-80 text-sm md:text-base leading-relaxed">
-                  Menjadi mitra transformasi digital terdepan yang memberdayakan ekosistem bisnis global melalui inovasi teknologi cerdas, adaptif, dan berkelanjutan.
+                  Menjadi penyedia solusi Infrastruktur Jaringan (TJKT) dan sistem IT Enterprise terdepan yang andal, aman, dan terukur untuk mendukung percepatan digitalisasi bisnis global.
                 </p>
               </div>
 
@@ -64,15 +64,15 @@ export default function About() {
                 <ul className="space-y-3 opacity-80 text-sm md:text-base leading-relaxed">
                   <li className="flex items-start gap-3">
                     <span className="text-purple-500 font-bold mt-0.5 opacity-60">01.</span>
-                    <span>Menghadirkan solusi pengembangan Web, Aplikasi & Desain UI/UX dengan standar kualitas enterprise.</span>
+                    <span>Menghadirkan layanan instalasi jaringan, server, dan keamanan siber dengan standar uptime tinggi kelas enterprise.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-purple-500 font-bold mt-0.5 opacity-60">02.</span>
-                    <span>Mengoptimalkan konversi bisnis klien melalui Digital Marketing dan identitas visual yang kuat.</span>
+                    <span>Mengoptimalkan efisiensi operasional klien melalui integrasi IoT, otomatisasi, dan pengembangan web sistem informasi.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-purple-500 font-bold mt-0.5 opacity-60">03.</span>
-                    <span>Membangun kolaborasi jangka panjang berdasarkan profesionalisme, integritas, dan jaminan kinerja.</span>
+                    <span>Memberikan dukungan teknis (IT Maintenance) jangka panjang berdasarkan profesionalisme dan SLA yang terjamin.</span>
                   </li>
                 </ul>
               </div>
