@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Monitor, Smartphone, PenTool, LayoutTemplate } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
+import ParticleText from './ParticleText';
 
 export default function Hero() {
   return (
@@ -48,14 +49,28 @@ export default function Hero() {
           Inovasi Digital Tanpa Batas
         </motion.div>
         
-        <motion.h1 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8 text-text leading-tight px-2"
+          className="mb-6 md:mb-8 flex justify-center w-full"
         >
-          Solusi B2B untuk <span className="text-primary block sm:inline">Perusahaan Teknologi</span> & Bisnis Modern
-        </motion.h1>
+          <div className="w-full max-w-[800px] h-[150px] sm:h-[200px] md:h-[240px]">
+            <ParticleText
+              text="Solusi B2B & Enterprise"
+              particleSize={2.5}
+              density={5}
+              color="#ffffff"
+              highlightColor="#10b981"
+              scatter={150}
+              gatherDuration={1500}
+              pointerRepel={60}
+              repelRadius={150}
+              fontSize="clamp(2.5rem, 8vw, 6rem)"
+              trigger="hover"
+            />
+          </div>
+        </motion.div>
         
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
