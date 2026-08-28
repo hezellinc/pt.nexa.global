@@ -11,7 +11,7 @@ const teamMembers = [
     icon: Briefcase,
     colorClass: 'glass-icon-box',
     initials: 'MZ',
-    image: '/zyldan.jpg'
+    image: '/zyldan-ceo.jpg'
   },
   {
     name: 'Muhammad Fariz Alfauzi',
