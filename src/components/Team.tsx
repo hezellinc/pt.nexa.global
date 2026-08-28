@@ -6,59 +6,66 @@ import ScrollReveal from './ScrollReveal';
 const teamMembers = [
   {
     name: 'Muhammad Zyldan Muzhaffar',
-    role: 'CEO',
+    jabatan: 'CEO',
+    role: 'Corporate Strategy & Leadership',
     icon: Briefcase,
     colorClass: 'glass-icon-box',
     initials: 'MZ',
-    image: undefined
+    image: '/zyldan.jpg'
   },
   {
     name: 'Muhammad Fariz Alfauzi',
-    role: 'Marketing & Dev',
-    icon: Code,
+    jabatan: 'Marketing',
+    role: 'Digital Campaign & SEO',
+    icon: Megaphone,
     colorClass: 'glass-icon-box-alt2',
     initials: 'MF',
-    image: undefined
-  },
-  {
-    name: 'Zulpa Apriliani',
-    role: 'Keuangan',
-    icon: Calculator,
-    colorClass: 'glass-icon-box-alt4',
-    initials: 'ZA',
-    image: undefined
-  },
-  {
-    name: 'Annas Nasri',
-    role: 'Keuangan',
-    icon: Calculator,
-    colorClass: 'glass-icon-box-alt3',
-    initials: 'AN',
-    image: undefined
+    image: '/fariz.jpg'
   },
   {
     name: 'Dimas Alvino',
-    role: 'Marketing',
+    jabatan: 'Marketing',
+    role: 'B2B Client Acquisition',
     icon: Megaphone,
     colorClass: 'glass-icon-box-alt1',
     initials: 'DA',
-    image: undefined
+    image: '/dimas.jpg'
   },
   {
     name: 'Reihan Alvin',
-    role: 'Desainer',
+    jabatan: 'Designer',
+    role: 'Product Structure & System Design',
     icon: Palette,
     colorClass: 'glass-icon-box-accent',
     initials: 'RA',
-    image: undefined
+    image: '/alvin.jpg'
   },
   {
     name: 'Wolid Herdiansyah',
-    role: 'Desainer',
+    jabatan: 'Designer',
+    role: 'Visual & Branding Design',
     icon: Palette,
     colorClass: 'glass-icon-box-alt2',
     initials: 'WH',
-    image: undefined
+    image: '/wolid.jpg'
+  },
+  {
+    name: 'Annas Nasri',
+    jabatan: 'Keuangan',
+    role: 'Financial Planning & Budgeting',
+    icon: Calculator,
+    colorClass: 'glass-icon-box-alt3',
+    initials: 'AN',
+    image: '/annas.jpg'
+  },
+  {
+    name: 'Zulpa Apriliani',
+    jabatan: 'Keuangan',
+    role: 'Accounting & Audit',
+    icon: Calculator,
+    colorClass: 'glass-icon-box-alt4',
+    initials: 'ZA',
+    image: '/zulpa.jpg'
   }
 ];
 
@@ -88,7 +95,13 @@ export default function Team() {
                 <div className="mb-6 relative">
                   {member.image ? (
                     <div className="w-24 h-24 rounded-full overflow-hidden shadow-inner flex items-center justify-center">
-                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover pointer-events-none select-none" 
+                        draggable="false" 
+                        onContextMenu={(e) => e.preventDefault()} 
+                      />
                     </div>
                   ) : (
                     <div className={`w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-inner ${member.colorClass}`}>
@@ -100,8 +113,15 @@ export default function Team() {
                   </div>
                 </div>
                 <h3 className="text-lg md:text-xl font-bold mb-2 text-text group-hover:text-primary transition-colors">{member.name}</h3>
-                <p className="text-primary font-semibold text-sm md:text-base bg-white/5 px-4 py-1 rounded-full shadow-sm">
-                  {member.role}
+                
+                {/* Jabatan Badge */}
+                <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                  {member.jabatan}
+                </div>
+                
+                {/* Role Description */}
+                <p className="text-sm opacity-70">
+                  <span className="font-semibold text-white/90">Role:</span> {member.role}
                 </p>
               </motion.div>
             </ScrollReveal>
