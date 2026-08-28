@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Monitor, Smartphone, PenTool, LayoutTemplate } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
-import ParticleText from './ParticleText';
+import ShinyText from './ShinyText';
 
 export default function Hero() {
   return (
@@ -55,21 +55,21 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-6 md:mb-8 flex justify-center w-full"
         >
-          <div className="w-full max-w-[800px] h-[150px] sm:h-[200px] md:h-[240px]">
-            <ParticleText
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center leading-tight px-2">
+            <ShinyText
               text="Solusi B2B & Enterprise"
-              particleSize={2.5}
-              density={5}
-              color="#ffffff"
-              highlightColor="#10b981"
-              scatter={150}
-              gatherDuration={1500}
-              pointerRepel={60}
-              repelRadius={150}
-              fontSize="clamp(2.5rem, 8vw, 6rem)"
-              trigger="hover"
+              speed={2}
+              color="#b5b5b5"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              delay={0}
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+              className="tracking-tight"
             />
-          </div>
+          </h1>
         </motion.div>
         
         <motion.p 
