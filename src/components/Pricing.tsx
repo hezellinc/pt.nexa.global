@@ -55,11 +55,11 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up" className="text-center mb-8 md:mb-12">
           <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase">
-            Penjualan & Paket
+            Investasi Infrastruktur
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Pilihan Paket Layanan</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Pilihan Paket Layanan IT</h2>
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto px-2">
-            Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Kami siap membantu dari perancangan hingga produk didistribusikan.
+            Pilih paket yang sesuai dengan kebutuhan skala perusahaan Anda. Kami menjamin keandalan uptime dan keamanan data kelas enterprise.
           </p>
         </ScrollReveal>
 
@@ -77,7 +77,13 @@ export default function Pricing() {
                     <Star size={16} className="fill-current" /> Paling Laris
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-text mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-text mb-2 flex items-center gap-3">
+                  {plan.name}
+                  <span className="relative flex h-3 w-3" title="Status: Online & Operational">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  </span>
+                </h3>
                 <p className="opacity-60 text-sm mb-6 min-h-[40px]">{plan.description}</p>
                 
                 <div className="mb-6">

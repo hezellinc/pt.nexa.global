@@ -1,4 +1,5 @@
 import { ClipboardCheck, Server, Workflow, ShieldCheck, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import InteractiveIcon from './InteractiveIcon';
 import ScrollReveal from './ScrollReveal';
 
@@ -45,8 +46,18 @@ export default function Process() {
 
         <div className="relative">
           {/* Connector Line (Desktop Only) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/5 -translate-y-1/2 z-0 rounded-full">
-            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary w-full rounded-full opacity-30"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/5 -translate-y-1/2 z-0 rounded-full overflow-hidden">
+            <motion.div 
+              className="absolute top-0 left-0 h-full rounded-full"
+              style={{
+                background: 'linear-gradient(90deg, var(--color-primary), #10b981, #8b5cf6)',
+                boxShadow: '0 0 15px rgba(16, 185, 129, 0.6)'
+              }}
+              initial={{ width: '0%' }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 2.5, ease: "easeInOut" }}
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">

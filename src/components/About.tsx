@@ -1,6 +1,44 @@
 import { Target, Users, Zap } from 'lucide-react';
+import { motion, useInView } from 'motion/react';
+import { useState, useRef, useEffect } from 'react';
 import InteractiveIcon from './InteractiveIcon';
 import ScrollReveal from './ScrollReveal';
+
+const StatCounter = ({ end, suffix = "", label }: { end: number, suffix?: string, label: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let startTimestamp: number | null = null;
+      const duration = 2000;
+      const step = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 4);
+        setCount(ease * end);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          setCount(end);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+  }, [isInView, end]);
+
+  const displayCount = end % 1 !== 0 ? count.toFixed(1) : Math.floor(count);
+
+  return (
+    <div ref={ref} className="glass-sm p-4 rounded-2xl text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform duration-300">
+      <div className="text-3xl md:text-4xl font-black text-primary mb-1">
+        {displayCount}{suffix}
+      </div>
+      <div className="text-xs md:text-sm opacity-80 uppercase tracking-wider font-semibold">{label}</div>
+    </div>
+  );
+};
 
 export default function About() {
   return (
@@ -80,6 +118,15 @@ export default function About() {
           </ScrollReveal>
 
         </div>
+
+        {/* Statistics Row */}
+        <ScrollReveal direction="up" delay={0.2} className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 md:mt-16">
+          <StatCounter end={100} suffix="+" label="Server Dikelola" />
+          <StatCounter end={50} suffix="Km+" label="Kabel FO Ditarik" />
+          <StatCounter end={99.9} suffix="%" label="Uptime Jaringan" />
+          <StatCounter end={24} suffix="/7" label="Monitoring Aktif" />
+        </ScrollReveal>
+
       </div>
     </section>
   );
