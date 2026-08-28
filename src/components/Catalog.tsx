@@ -1,256 +1,160 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Globe, ShoppingBag, Layout, Code, Smartphone, Database, 
-  PenTool, Monitor, Layers, Briefcase, Image as ImageIcon, 
-  Share2, PlayCircle, BarChart3, Search, Megaphone, ArrowRight, BookOpen
-} from 'lucide-react';
+import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { Server, Wifi, Database, Globe, ShieldCheck, Cpu, Activity, Zap } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import InteractiveIcon from './InteractiveIcon';
 
-const catalogData = {
-  NEXANET: [
-    {
-      title: "Instalasi Fiber Optic & LAN",
-      desc: "Penarikan kabel jaringan, terminasi FO, dan instalasi infrastruktur LAN untuk kantor atau instansi dengan standar rapi dan aman.",
-      icon: Layers,
-      colorClass: "glass-icon-box"
-    },
-    {
-      title: "Konfigurasi Router Mikrotik & Cisco",
-      desc: "Setting routing, manajemen bandwidth, load balancing, dan failover untuk menjamin koneksi internet perusahaan tetap stabil.",
-      icon: Globe,
-      colorClass: "glass-icon-box-alt1"
-    },
-    {
-      title: "Topologi & Desain Jaringan",
-      desc: "Perencanaan dan pembuatan topologi jaringan skala enterprise yang efisien, mudah dikelola, dan terukur (scalable).",
-      icon: PenTool,
-      colorClass: "glass-icon-box-alt2"
-    },
-    {
-      title: "Wireless Point-to-Point",
-      desc: "Distribusi jaringan nirkabel (wireless) jarak jauh untuk menghubungkan antar gedung atau kantor cabang tanpa kabel.",
-      icon: Share2,
-      colorClass: "glass-icon-box-alt3"
-    }
-  ],
-  NEXASERVER: [
-    {
-      title: "Setup Windows/Linux Server",
-      desc: "Instalasi sistem operasi server, active directory, file sharing, dan manajemen user untuk kebutuhan internal kantor.",
-      icon: Database,
-      colorClass: "glass-icon-box-alt1"
-    },
-    {
-      title: "Cloud & Web Hosting",
-      desc: "Migrasi dan manajemen cloud server (AWS, Google Cloud, VPS) untuk memastikan aplikasi bisnis berjalan 24/7 tanpa henti.",
-      icon: Globe,
-      colorClass: "glass-icon-box-alt4"
-    },
-    {
-      title: "Data Backup & Recovery",
-      desc: "Sistem pencadangan data otomatis (cloud/lokal) dan prosedur pemulihan bencana (Disaster Recovery) untuk mencegah kehilangan data.",
-      icon: Layers,
-      colorClass: "glass-icon-box-alt2"
-    },
-    {
-      title: "Mail Server Perusahaan",
-      desc: "Pembuatan email domain khusus perusahaan (@perusahaan.com) yang aman, profesional, dan bebas spam.",
-      icon: Briefcase,
-      colorClass: "glass-icon-box"
-    }
-  ],
-  NEXAWEB: [
-    {
-      title: "Corporate Website Profile",
-      desc: "Pembuatan website profil perusahaan yang modern, responsif, dan SEO friendly untuk kredibilitas digital.",
-      icon: Monitor,
-      colorClass: "glass-icon-box-alt3"
-    },
-    {
-      title: "Sistem Informasi Manajemen",
-      desc: "Pengembangan aplikasi berbasis web (SaaS) untuk administrasi, HRD, inventory, atau kebutuhan spesifik bisnis lainnya.",
-      icon: Layout,
-      colorClass: "glass-icon-box-alt1"
-    },
-    {
-      title: "E-Commerce Integrasi Payment",
-      desc: "Toko online interaktif dengan keranjang belanja dan gateway pembayaran otomatis (transfer bank, e-wallet).",
-      icon: ShoppingBag,
-      colorClass: "glass-icon-box-alt2"
-    }
-  ],
-  NEXASECURE: [
-    {
-      title: "Instalasi IP Camera & CCTV",
-      desc: "Pemasangan sistem pengawasan CCTV resolusi tinggi yang dapat dipantau langsung dari smartphone kapan saja.",
-      icon: Search,
-      colorClass: "glass-icon-box-alt4"
-    },
-    {
-      title: "Firewall & Keamanan Jaringan",
-      desc: "Implementasi sistem firewall (Fortinet, Mikrotik) untuk memblokir serangan siber, malware, dan akses tidak sah.",
-      icon: Database,
-      colorClass: "glass-icon-box"
-    },
-    {
-      title: "Setup VPN (Virtual Private Network)",
-      desc: "Koneksi jarak jauh yang aman (VPN) agar karyawan dapat mengakses data kantor dari rumah secara terenkripsi.",
-      icon: Share2,
-      colorClass: "glass-icon-box-alt1"
-    },
-    {
-      title: "Network Audit & Penetration Testing",
-      desc: "Evaluasi celah keamanan jaringan dan server, serta perbaikan sistem untuk mencegah kebocoran data.",
-      icon: Code,
-      colorClass: "glass-icon-box-alt2"
-    }
-  ],
-  NEXAIOT: [
-    {
-      title: "Smart Office & Automation",
-      desc: "Pemasangan perangkat pintar berbasis IoT seperti kontrol lampu, suhu, dan akses pintu secara otomatis.",
-      icon: Smartphone,
-      colorClass: "glass-icon-box"
-    },
-    {
-      title: "PABX & IP PBX (Telepon Kantor)",
-      desc: "Instalasi sistem telepon internal kantor (PABX) untuk komunikasi antar divisi yang efisien dan hemat biaya.",
-      icon: Megaphone,
-      colorClass: "glass-icon-box-alt1"
-    },
-    {
-      title: "Sistem Absensi Biometrik",
-      desc: "Integrasi mesin sidik jari atau pengenalan wajah yang terhubung langsung ke server database perusahaan.",
-      icon: Monitor,
-      colorClass: "glass-icon-box-alt3"
-    },
-    {
-      title: "VoIP (Voice over IP)",
-      desc: "Solusi komunikasi suara jarak jauh melalui jaringan internet untuk menghemat tagihan telepon cabang bisnis Anda.",
-      icon: Globe,
-      colorClass: "glass-icon-box-alt2"
-    }
-  ]
-};
-
-type Category = keyof typeof catalogData;
-const categories: Category[] = ["NEXANET", "NEXASERVER", "NEXAWEB", "NEXASECURE", "NEXAIOT"];
+const nodes = [
+  { id: 'NEXANET', label: 'NEXANET', desc: 'Fiber Optic & LAN', icon: Wifi, x: 15, y: 25, color: '#3b82f6', latency: '2ms', traffic: '10 Gbps' },
+  { id: 'NEXASERVER', label: 'NEXASERVER', desc: 'Cloud & Data Center', icon: Database, x: 85, y: 25, color: '#8b5cf6', latency: '4ms', traffic: '8 Gbps' },
+  { id: 'NEXAWEB', label: 'NEXAWEB', desc: 'Web & ERP Systems', icon: Globe, x: 15, y: 75, color: '#10b981', latency: '12ms', traffic: '2 Gbps' },
+  { id: 'NEXASECURE', label: 'NEXASECURE', desc: 'Firewall & CCTV', icon: ShieldCheck, x: 85, y: 75, color: '#ef4444', latency: '1ms', traffic: '5 Gbps' },
+  { id: 'NEXAIOT', label: 'NEXAIOT', desc: 'Smart Office & VoIP', icon: Cpu, x: 50, y: 85, color: '#f59e0b', latency: '5ms', traffic: '1 Gbps' },
+];
 
 export default function Catalog() {
-  const [activeCategory, setActiveCategory] = useState<Category>("NEXANET");
-  const [isLoading, setIsLoading] = useState(false);
-  const loadingTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
-  const handleCategoryChange = (cat: Category) => {
-    if (cat === activeCategory) return;
-    setActiveCategory(cat);
-    setIsLoading(true);
-    if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
-    loadingTimeout.current = setTimeout(() => {
-      setIsLoading(false);
-    }, 400);
+  const handleNodeClick = (id: string) => {
+    window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id } }));
   };
 
-  useEffect(() => {
-    return () => {
-      if (loadingTimeout.current) clearTimeout(loadingTimeout.current);
-    };
-  }, []);
-
   return (
-    <section id="katalog" className="lazy-section py-8 md:py-12 px-4 md:px-8">
+    <section id="katalog" className="lazy-section py-8 md:py-16 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal direction="up" className="text-center mb-10 md:mb-12">
+        <ScrollReveal direction="up" className="text-center mb-10 md:mb-16">
           <div className="inline-block mb-4 px-4 py-2 bg-[var(--glass-bg)] shadow-sm rounded-full text-primary font-bold text-xs md:text-sm tracking-wider uppercase border border-primary/10">
-            Katalog Layanan Digital
+            Live Topology Map
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Detail Produk & Layanan</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Network Operation Center (NOC)</h2>
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto px-2">
-            Pilih kategori di bawah ini untuk melihat contoh konkret produk digital (seperti menu hidangan) yang bisa kami kembangkan untuk bisnis Anda.
+            Pantau arsitektur solusi TJKT kami. Arahkan kursor pada node untuk melihat status koneksi, atau klik untuk mempelajari detail layanannya.
           </p>
         </ScrollReveal>
 
-        {/* Tab Navigation */}
-        <ScrollReveal direction="up" delay={0.1} className="mb-10">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4 p-2 bg-[color-mix(in_srgb,var(--bg-color)_80%,transparent)] backdrop-blur-md rounded-2xl md:rounded-full glass-sm max-w-fit mx-auto">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => handleCategoryChange(cat)}
-                className={`px-4 md:px-6 py-2.5 rounded-xl md:rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
-                  activeCategory === cat
-                    ? 'bg-primary text-white shadow-md transform scale-105'
-                    : 'text-text hover:bg-white/5 opacity-70 hover:opacity-100'
-                }`}
-              >
-                {cat}
-              </button>
+        <div className="relative w-full max-w-4xl mx-auto aspect-square md:aspect-[4/3] lg:aspect-[16/9] glass rounded-[2rem] p-4 md:p-8 overflow-hidden bg-[#0a0a0a]/90 border-primary/20">
+          
+          {/* SVG Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+            <defs>
+              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="rgba(16, 185, 129, 0.2)" />
+                <stop offset="100%" stopColor="rgba(139, 92, 246, 0.2)" />
+              </linearGradient>
+            </defs>
+            {nodes.map((node) => (
+              <g key={`line-${node.id}`}>
+                <line 
+                  x1="50%" y1="45%" 
+                  x2={`${node.x}%`} y2={`${node.y}%`} 
+                  stroke="url(#line-gradient)" 
+                  strokeWidth="2" 
+                />
+                {/* Animated data packet */}
+                <circle r="3" fill={node.color} className="animate-pulse">
+                  <animateMotion 
+                    dur={`${Math.random() * 2 + 2}s`} 
+                    repeatCount="indefinite" 
+                    path={`M 50 ${45} L ${node.x} ${node.y}`} 
+                    keyPoints="0;1" 
+                    keyTimes="0;1" 
+                    calcMode="linear" 
+                  />
+                  {/* Using raw SVG animation trick for percentage coordinates requires a bit of hack or exact coordinates. 
+                      Since we use percentages, let's use CSS or just rely on a simpler dasharray animation. */}
+                </circle>
+              </g>
             ))}
-          </div>
-        </ScrollReveal>
+          </svg>
 
-        {/* Tab Content */}
-        <div className="min-h-[400px]">
-          <AnimatePresence mode="wait">
-            {isLoading ? (
-              <motion.div
-                key="skeleton"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
-              >
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="glass p-6 md:p-8 flex items-start gap-4 md:gap-6">
-                    <div className="shrink-0 mt-1 w-12 h-12 rounded-2xl bg-white/10 animate-pulse"></div>
-                    <div className="w-full">
-                      <div className="h-6 w-3/4 bg-white/10 rounded-md animate-pulse mb-4"></div>
-                      <div className="h-4 w-full bg-white/10 rounded-md animate-pulse mb-2"></div>
-                      <div className="h-4 w-5/6 bg-white/10 rounded-md animate-pulse mb-6"></div>
-                      <div className="h-4 w-32 bg-white/10 rounded-md animate-pulse"></div>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                key={activeCategory}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"
-              >
-                {catalogData[activeCategory].map((product, index) => (
-                  <div 
-                    key={product.title} 
-                    className="glass p-6 md:p-8 flex items-start gap-4 md:gap-6 group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
-                    onClick={() => window.dispatchEvent(new CustomEvent('open-service-detail', { detail: { id: activeCategory } }))}
-                  >
-                    <div className="shrink-0 mt-1">
-                      <InteractiveIcon icon={product.icon} colorClass={product.colorClass} size={36} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold mb-3 text-text group-hover:text-primary transition-colors">
-                        {product.title}
-                      </h3>
-                      <p className="opacity-80 text-sm md:text-base leading-relaxed mb-4">
-                        {product.desc}
-                      </p>
-                      <button className="flex items-center gap-2 text-sm font-bold text-primary group-hover:underline">
-                        Konsultasi Solusi Ini <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
+          {/* SVG Lines - Alternative (Dasharray) for better percentage support */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+            {nodes.map((node) => (
+              <line 
+                key={`dash-${node.id}`}
+                x1="50%" y1="45%" 
+                x2={`${node.x}%`} y2={`${node.y}%`} 
+                stroke={node.color}
+                strokeWidth="2" 
+                strokeDasharray="4 12"
+                className="animate-[dash_2s_linear_infinite]"
+                opacity={hoveredNode === node.id ? 1 : 0.3}
+              />
+            ))}
+          </svg>
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes dash {
+              to { stroke-dashoffset: -16; }
+            }
+          `}} />
+
+          {/* Core Node */}
+          <div 
+            className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center cursor-help"
+            onMouseEnter={() => setHoveredNode('CORE')}
+            onMouseLeave={() => setHoveredNode(null)}
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/20 rounded-full animate-ping opacity-75"></div>
+              <div className="w-16 h-16 md:w-20 md:h-20 glass bg-[#0a0a0a] rounded-full flex items-center justify-center border-2 border-primary shadow-[0_0_30px_rgba(16,185,129,0.5)] z-10 relative">
+                <Server size={32} className="text-primary animate-pulse" />
+              </div>
+            </div>
+            <div className="mt-3 font-bold text-sm md:text-base text-white text-center bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
+              CORE ROUTER
+            </div>
+            
+            {/* Core Popup */}
+            {hoveredNode === 'CORE' && (
+              <div className="absolute top-full mt-4 w-48 bg-black/90 border border-primary/50 rounded-xl p-3 z-50 shadow-2xl backdrop-blur-md">
+                <div className="text-xs text-primary font-bold mb-1 flex items-center gap-1"><Activity size={12} /> STATUS: ONLINE</div>
+                <div className="text-xs text-white/80">Uptime: 99.999%</div>
+                <div className="text-xs text-white/80">Total Bandwidth: 40 Gbps</div>
+                <div className="text-xs text-white/80">Active Nodes: 5</div>
+              </div>
             )}
-          </AnimatePresence>
+          </div>
+
+          {/* Peripheral Nodes */}
+          {nodes.map((node) => (
+            <div 
+              key={node.id}
+              className="absolute z-20 flex flex-col items-center justify-center cursor-pointer group transition-transform duration-300 hover:scale-110"
+              style={{ top: `${node.y}%`, left: `${node.x}%`, transform: 'translate(-50%, -50%)' }}
+              onMouseEnter={() => setHoveredNode(node.id)}
+              onMouseLeave={() => setHoveredNode(null)}
+              onClick={() => handleNodeClick(node.id)}
+            >
+              <div className="w-12 h-12 md:w-16 md:h-16 glass bg-[#0a0a0a] rounded-2xl flex items-center justify-center border border-white/20 group-hover:border-white/50 transition-colors relative">
+                <div className="absolute inset-0 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity" style={{ backgroundColor: node.color }}></div>
+                <node.icon size={24} color={node.color} className="relative z-10" />
+              </div>
+              <div className="mt-2 font-bold text-xs md:text-sm text-white/90 text-center bg-black/50 px-2 py-1 rounded-md backdrop-blur-sm border border-white/10">
+                {node.label}
+              </div>
+
+              {/* Node Popup */}
+              <div className={`absolute w-40 md:w-48 bg-black/90 border rounded-xl p-3 z-50 shadow-2xl backdrop-blur-md transition-all duration-300 pointer-events-none ${hoveredNode === node.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+                   style={{ borderColor: node.color, bottom: '100%', marginBottom: '16px', left: '50%', transform: hoveredNode === node.id ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(10px)' }}>
+                <div className="text-xs font-bold mb-1 flex items-center gap-1" style={{ color: node.color }}>
+                  <Zap size={12} /> {node.desc}
+                </div>
+                <div className="text-xs text-emerald-400 font-mono mb-1">● ONLINE</div>
+                <div className="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-white/10">
+                  <div>
+                    <div className="text-[10px] text-white/50 uppercase">Latency</div>
+                    <div className="text-xs font-mono text-white/90">{node.latency}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-white/50 uppercase">Traffic</div>
+                    <div className="text-xs font-mono text-white/90">{node.traffic}</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-[10px] text-white/40 italic text-center">Klik untuk detail</div>
+              </div>
+            </div>
+          ))}
+
         </div>
-        
       </div>
     </section>
   );

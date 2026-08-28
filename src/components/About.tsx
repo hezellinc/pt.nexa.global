@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import InteractiveIcon from './InteractiveIcon';
 import ScrollReveal from './ScrollReveal';
+import TerminalVisual from './TerminalVisual';
 
 const StatCounter = ({ end, suffix = "", label }: { end: number, suffix?: string, label: string }) => {
   const [count, setCount] = useState(0);
@@ -48,26 +49,7 @@ export default function About() {
           
           {/* Image/Visual side */}
           <ScrollReveal direction="right" className="w-full lg:w-1/2 max-w-md lg:max-w-none mx-auto">
-            <div className="glass aspect-square p-4 md:p-8 flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 rounded-[2rem] pointer-events-none" />
-              <div className="grid grid-cols-2 gap-4 md:gap-6 w-full h-full p-2 md:p-4">
-                <div className="glass-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl">
-                  <InteractiveIcon icon={Zap} colorClass="glass-icon-box-alt2" size={36} />
-                </div>
-                <div className="glass-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl translate-y-4 md:translate-y-8">
-                  <InteractiveIcon icon={Users} colorClass="glass-icon-box" size={36} />
-                </div>
-                <div className="glass-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl -translate-y-4 md:-translate-y-8">
-                  <InteractiveIcon icon={Target} colorClass="glass-icon-box-alt1" size={36} />
-                </div>
-                <div className="glass-sm bg-primary/10 flex items-center justify-center rounded-2xl md:rounded-3xl">
-                  <div className="text-2xl md:text-4xl font-black text-primary text-center">
-                    <span className="block text-lg md:text-2xl text-text">Sejak</span>
-                    2020
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TerminalVisual />
           </ScrollReveal>
 
           {/* Text side */}
