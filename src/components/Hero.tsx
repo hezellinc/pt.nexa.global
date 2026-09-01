@@ -85,12 +85,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full px-6"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 w-full px-6"
         >
-          <a href="#layanan" className="glass-btn px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
+          <a href="#layanan" className="glass-btn-accent px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
             Eksplorasi Layanan
           </a>
-          <a href="#kontak" className="glass-btn-accent px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
+          <a href="#kontak" className="glass-btn-accent opacity-80 hover:opacity-100 px-8 py-4 font-bold text-base md:text-lg w-full sm:w-auto flex items-center justify-center text-center">
             Konsultasi Gratis
           </a>
         </motion.div>
